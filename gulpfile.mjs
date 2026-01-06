@@ -257,6 +257,15 @@ $storage-prefix: '${p.storagePrefix}' !default;
         }
         return '[' + attr + ']';
     };
+    
+    /**
+     * Utility: Build data attribute name (NOT selector)
+     * @param {string} name - Attribute name without prefix
+     * @returns {string} Attribute name (e.g., 'data-sa-theme')
+     */
+    window[NS].dataAttr = function(name) {
+        return window.__PREFIX_CONFIG__.dataAttr + '-' + name;
+    };
 
     /**
      * Utility: Dispatch prefixed custom event
