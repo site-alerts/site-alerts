@@ -1,0 +1,162 @@
+// =====================================================
+// Admin UI - Promo Card Component
+// =====================================================
+// Premium upsell card with bright, shiny gold theme.
+// White background with vibrant gold accents.
+// =====================================================
+
+@use "sass:color";
+@use "../prefix" as *;
+
+// Bright gold palette
+$promo-gold: #F0A500;
+$promo-gold-hover: #D99400;
+
+.#{$prefix}-promo-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid #FDE68A;
+  border-left: 3px solid $promo-gold;
+
+  &__body {
+    padding: 1rem 1.25rem;
+  }
+
+  // Dismiss button (absolute positioned top-right)
+  &__dismiss {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #B7791F;
+    opacity: 0.6;
+
+    &:focus {
+      outline: none;
+    }
+
+    [class^="#{$prefix}-icon--"] {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.2em 0.5em;
+    margin-bottom: 0.5rem;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #B7791F;
+    background-color: #FEF9E7;
+    border-radius: #{css-var('border-radius-sm')};
+
+    svg {
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+  }
+
+  &__title {
+    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #{css-var('heading-color')};
+  }
+
+  &__description {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.8125rem;
+    color: #{css-var('muted-color')};
+  }
+
+  // Inline horizontal features
+  &__features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem 1rem;
+    margin: 0 0 1rem 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.8125rem;
+    color: #{css-var('body-color')};
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+  }
+
+  &__check {
+    flex-shrink: 0;
+    width: 0.875rem;
+    height: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FEF9E7;
+    border-radius: 50%;
+    color: #B7791F;
+
+    &::before {
+      content: '✓';
+      font-size: 0.5625rem;
+      font-weight: 700;
+    }
+  }
+
+  &__note {
+    display: flex;
+    align-items: center;
+    gap: .375rem;
+    margin: 0;
+    font-size: .75rem;
+    color: var(--sa-secondary);
+  }
+
+  // Gold button variant
+  .#{$prefix}-btn--gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.4375rem 1rem;
+    background: $promo-gold;
+    border-color: $promo-gold;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    box-shadow: 0 2px 6px color.change($promo-gold, $alpha: 0.35);
+    transition: all 0.2s ease;
+
+    svg {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+
+    &:hover {
+      background: $promo-gold-hover;
+      border-color: $promo-gold-hover;
+      box-shadow: 0 3px 10px color.change($promo-gold, $alpha: 0.45);
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px color.change($promo-gold, $alpha: 0.3);
+    }
+  }
+}

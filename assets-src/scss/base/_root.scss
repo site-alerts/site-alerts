@@ -1,0 +1,179 @@
+// =====================================================
+// Admin UI - CSS Custom Properties (Root)
+// =====================================================
+// Uses prefix from _prefix.scss (auto-generated)
+// =====================================================
+
+@use "../prefix" as *;
+@use "variables" as *;
+@use "variables-dark" as *;
+
+// Light theme (default)
+:root,
+#{data-attr('theme', 'light')} {
+  // Brand Colors
+  #{$css-var-prefix}-primary: #{$sa-primary};
+  #{$css-var-prefix}-secondary: #{$sa-secondary};
+  #{$css-var-prefix}-success: #{$sa-success};
+  #{$css-var-prefix}-info: #{$sa-info};
+  #{$css-var-prefix}-warning: #{$sa-warning};
+  #{$css-var-prefix}-danger: #{$sa-danger};
+  #{$css-var-prefix}-light: #{$sa-light};
+  #{$css-var-prefix}-dark: #{$sa-dark};
+
+  // RGB versions for rgba() usage
+  #{$css-var-prefix}-primary-rgb: 115, 103, 240;
+  #{$css-var-prefix}-secondary-rgb: 128, 131, 144;
+  #{$css-var-prefix}-success-rgb: 40, 199, 111;
+  #{$css-var-prefix}-info-rgb: 0, 186, 209;
+  #{$css-var-prefix}-warning-rgb: 255, 159, 67;
+  #{$css-var-prefix}-danger-rgb: 255, 76, 81;
+
+  // Light variants
+  #{$css-var-prefix}-primary-light: rgba(115, 103, 240, 0.12);
+  #{$css-var-prefix}-secondary-light: rgba(128, 131, 144, 0.12);
+  #{$css-var-prefix}-success-light: rgba(40, 199, 111, 0.12);
+  #{$css-var-prefix}-info-light: rgba(0, 186, 209, 0.12);
+  #{$css-var-prefix}-warning-light: rgba(255, 159, 67, 0.12);
+  #{$css-var-prefix}-danger-light: rgba(255, 76, 81, 0.12);
+
+  // Gray Scale
+  #{$css-var-prefix}-white: #{$sa-white};
+  #{$css-var-prefix}-black: #{$sa-black};
+  #{$css-var-prefix}-gray-25: #{$sa-gray-25};
+  #{$css-var-prefix}-gray-50: #{$sa-gray-50};
+  #{$css-var-prefix}-gray-100: #{$sa-gray-100};
+  #{$css-var-prefix}-gray-200: #{$sa-gray-200};
+  #{$css-var-prefix}-gray-300: #{$sa-gray-300};
+  #{$css-var-prefix}-gray-400: #{$sa-gray-400};
+  #{$css-var-prefix}-gray-500: #{$sa-gray-500};
+  #{$css-var-prefix}-gray-600: #{$sa-gray-600};
+  #{$css-var-prefix}-gray-700: #{$sa-gray-700};
+  #{$css-var-prefix}-gray-800: #{$sa-gray-800};
+  #{$css-var-prefix}-gray-900: #{$sa-gray-900};
+
+  // Background & Surface
+  #{$css-var-prefix}-body-bg: #{$sa-body-bg};
+  #{$css-var-prefix}-body-bg-rgb: 248, 247, 250;
+  #{$css-var-prefix}-paper-bg: #{$sa-paper-bg};
+  #{$css-var-prefix}-card-bg: #{$sa-card-bg};
+
+  // Text Colors
+  #{$css-var-prefix}-body-color: #{$sa-body-color};
+  #{$css-var-prefix}-heading-color: #{$sa-heading-color};
+  #{$css-var-prefix}-muted-color: #{$sa-muted-color};
+  #{$css-var-prefix}-secondary-color: #{$sa-gray-500};
+
+  // Borders
+  #{$css-var-prefix}-border-color: #{$sa-border-color};
+  #{$css-var-prefix}-border-width: #{$sa-border-width};
+  #{$css-var-prefix}-border-radius: #{$sa-border-radius};
+  #{$css-var-prefix}-border-radius-sm: #{$sa-border-radius-sm};
+  #{$css-var-prefix}-border-radius-lg: #{$sa-border-radius-lg};
+  #{$css-var-prefix}-border-radius-xl: #{$sa-border-radius-xl};
+  #{$css-var-prefix}-border-radius-pill: #{$sa-border-radius-pill};
+
+  // Links
+  #{$css-var-prefix}-link-color: #{$sa-link-color};
+  #{$css-var-prefix}-link-hover-color: #{$sa-link-hover-color};
+
+  // Typography
+  #{$css-var-prefix}-font-family: #{$sa-font-family-sans-serif};
+  #{$css-var-prefix}-font-sans-serif: #{$sa-font-family-sans-serif};
+  #{$css-var-prefix}-font-monospace: #{$sa-font-family-monospace};
+  #{$css-var-prefix}-font-size-base: #{$sa-font-size-base};
+  #{$css-var-prefix}-font-size-sm: #{$sa-font-size-sm};
+  #{$css-var-prefix}-font-size-lg: #{$sa-font-size-lg};
+  #{$css-var-prefix}-line-height-base: #{$sa-line-height-base};
+  #{$css-var-prefix}-font-weight-normal: #{$sa-font-weight-normal};
+  #{$css-var-prefix}-font-weight-medium: #{$sa-font-weight-medium};
+  #{$css-var-prefix}-font-weight-semibold: #{$sa-font-weight-semibold};
+  #{$css-var-prefix}-font-weight-bold: #{$sa-font-weight-bold};
+
+  // Heading Font Sizes
+  #{$css-var-prefix}-h1-font-size: #{$sa-h1-font-size};
+  #{$css-var-prefix}-h2-font-size: #{$sa-h2-font-size};
+  #{$css-var-prefix}-h3-font-size: #{$sa-h3-font-size};
+  #{$css-var-prefix}-h4-font-size: #{$sa-h4-font-size};
+  #{$css-var-prefix}-h5-font-size: #{$sa-h5-font-size};
+  #{$css-var-prefix}-h6-font-size: #{$sa-h6-font-size};
+
+  // Shadows
+  #{$css-var-prefix}-box-shadow: #{$sa-box-shadow};
+  #{$css-var-prefix}-box-shadow-sm: #{$sa-box-shadow-sm};
+  #{$css-var-prefix}-box-shadow-lg: #{$sa-box-shadow-lg};
+
+  // Transitions
+  #{$css-var-prefix}-transition-base: #{$sa-transition-base};
+  #{$css-var-prefix}-transition-fade: #{$sa-transition-fade};
+
+  // Table
+  #{$css-var-prefix}-table-cell-padding-y: #{$sa-table-cell-padding-y};
+  #{$css-var-prefix}-table-cell-padding-x: #{$sa-table-cell-padding-x};
+
+  // Form Check Colors (for unchecked state)
+  #{$css-var-prefix}-form-check-bg: #{$sa-paper-bg};
+  #{$css-var-prefix}-form-check-border: #{$sa-gray-400};
+  #{$css-var-prefix}-form-switch-bg: #{$sa-gray-300};
+
+  // Form Disabled States
+  #{$css-var-prefix}-input-disabled-bg: #{$sa-gray-100};
+  #{$css-var-prefix}-input-disabled-border: #{$sa-gray-200};
+}
+
+// Dark theme
+#{data-attr('theme', 'dark')} {
+  color-scheme: dark;
+
+  // Background & Surface
+  #{$css-var-prefix}-body-bg: #{$sa-dark-body-bg};
+  #{$css-var-prefix}-body-bg-rgb: 37, 41, 60;
+  #{$css-var-prefix}-paper-bg: #{$sa-dark-paper-bg};
+  #{$css-var-prefix}-card-bg: #{$sa-dark-card-bg};
+
+  // Text Colors
+  #{$css-var-prefix}-body-color: #{$sa-dark-body-color};
+  #{$css-var-prefix}-heading-color: #{$sa-dark-heading-color};
+  #{$css-var-prefix}-muted-color: #{$sa-dark-muted-color};
+  #{$css-var-prefix}-secondary-color: #{$sa-dark-muted-color};
+
+  // Borders
+  #{$css-var-prefix}-border-color: #{$sa-dark-border-color};
+
+  // Links
+  #{$css-var-prefix}-link-color: #{$sa-dark-link-color};
+  #{$css-var-prefix}-link-hover-color: #{$sa-dark-link-hover-color};
+
+  // Light variants for dark theme
+  #{$css-var-prefix}-primary-light: rgba(115, 103, 240, 0.16);
+  #{$css-var-prefix}-secondary-light: rgba(128, 131, 144, 0.16);
+  #{$css-var-prefix}-success-light: rgba(40, 199, 111, 0.16);
+  #{$css-var-prefix}-info-light: rgba(0, 186, 209, 0.16);
+  #{$css-var-prefix}-warning-light: rgba(255, 159, 67, 0.16);
+  #{$css-var-prefix}-danger-light: rgba(255, 76, 81, 0.16);
+
+  // Adjusted shadows for dark theme
+  #{$css-var-prefix}-box-shadow: 0 0.1875rem 0.75rem 0 #{$sa-dark-shadow-color};
+  #{$css-var-prefix}-box-shadow-sm: 0 0.125rem 0.5rem 0 #{$sa-dark-shadow-color};
+  #{$css-var-prefix}-box-shadow-lg: 0 0.25rem 1.125rem 0 #{$sa-dark-shadow-color};
+
+  // Form Check Colors for dark theme
+  #{$css-var-prefix}-form-check-bg: #{$sa-dark-paper-bg};
+  #{$css-var-prefix}-form-check-border: #{$sa-dark-border-color};
+  #{$css-var-prefix}-form-switch-bg: #464b65;
+
+  // Form Disabled States for dark theme
+  #{$css-var-prefix}-input-disabled-bg: #3b3f5c;
+  #{$css-var-prefix}-input-disabled-border: #434968;
+
+  // Gray scale adjustments for dark theme
+  #{$css-var-prefix}-gray-100: #3b3f5c;
+  #{$css-var-prefix}-gray-200: #434968;
+  #{$css-var-prefix}-gray-300: #4d5274;
+  #{$css-var-prefix}-gray-400: #5d6385;
+  #{$css-var-prefix}-gray-500: #7983bb;
+  #{$css-var-prefix}-gray-600: #9199c8;
+  #{$css-var-prefix}-gray-700: #a9b0d5;
+  #{$css-var-prefix}-gray-800: #c1c7e2;
+  #{$css-var-prefix}-gray-900: #d9deef;
+}

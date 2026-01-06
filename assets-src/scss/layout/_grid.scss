@@ -1,0 +1,552 @@
+// =====================================================
+// Admin UI - Grid System
+// =====================================================
+// Note: Basic flex utilities are already in _global.scss
+// This file contains container and advanced grid utilities
+// =====================================================
+
+@use "../prefix" as *;
+
+// -----------------------------------------------------
+// Grid Variables
+// -----------------------------------------------------
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 1.5rem !default;
+
+// -----------------------------------------------------
+// Row
+// -----------------------------------------------------
+
+.#{$prefix}-row {
+  #{$css-var-prefix}-gutter-x: #{$grid-gutter-width};
+  #{$css-var-prefix}-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(#{$css-var-prefix}-gutter-y));
+  margin-right: calc(-0.5 * var(#{$css-var-prefix}-gutter-x));
+  margin-left: calc(-0.5 * var(#{$css-var-prefix}-gutter-x));
+
+  > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(#{$css-var-prefix}-gutter-x) * 0.5);
+    padding-left: calc(var(#{$css-var-prefix}-gutter-x) * 0.5);
+    margin-top: var(#{$css-var-prefix}-gutter-y);
+  }
+}
+
+// -----------------------------------------------------
+// Columns - Base (no breakpoint)
+// -----------------------------------------------------
+
+.#{$prefix}-col {
+  flex: 1 0 0;
+}
+
+.#{$prefix}-col-auto {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.#{$prefix}-col-1 {
+  flex: 0 0 auto;
+  width: 8.33333333%;
+}
+
+.#{$prefix}-col-2 {
+  flex: 0 0 auto;
+  width: 16.66666667%;
+}
+
+.#{$prefix}-col-3 {
+  flex: 0 0 auto;
+  width: 25%;
+}
+
+.#{$prefix}-col-4 {
+  flex: 0 0 auto;
+  width: 33.33333333%;
+}
+
+.#{$prefix}-col-5 {
+  flex: 0 0 auto;
+  width: 41.66666667%;
+}
+
+.#{$prefix}-col-6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.#{$prefix}-col-7 {
+  flex: 0 0 auto;
+  width: 58.33333333%;
+}
+
+.#{$prefix}-col-8 {
+  flex: 0 0 auto;
+  width: 66.66666667%;
+}
+
+.#{$prefix}-col-9 {
+  flex: 0 0 auto;
+  width: 75%;
+}
+
+.#{$prefix}-col-10 {
+  flex: 0 0 auto;
+  width: 83.33333333%;
+}
+
+.#{$prefix}-col-11 {
+  flex: 0 0 auto;
+  width: 91.66666667%;
+}
+
+.#{$prefix}-col-12 {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+// -----------------------------------------------------
+// Columns - SM (≥576px)
+// -----------------------------------------------------
+
+@media (min-width: 576px) {
+  .#{$prefix}-col-sm {
+    flex: 1 0 0;
+  }
+  .#{$prefix}-col-sm-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .#{$prefix}-col-sm-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+  }
+  .#{$prefix}-col-sm-2 {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+  }
+  .#{$prefix}-col-sm-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .#{$prefix}-col-sm-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+  .#{$prefix}-col-sm-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+  }
+  .#{$prefix}-col-sm-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .#{$prefix}-col-sm-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%;
+  }
+  .#{$prefix}-col-sm-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+  .#{$prefix}-col-sm-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  .#{$prefix}-col-sm-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+  }
+  .#{$prefix}-col-sm-11 {
+    flex: 0 0 auto;
+    width: 91.66666667%;
+  }
+  .#{$prefix}-col-sm-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+// -----------------------------------------------------
+// Columns - MD (≥768px)
+// -----------------------------------------------------
+
+@media (min-width: 768px) {
+  .#{$prefix}-col-md {
+    flex: 1 0 0;
+  }
+  .#{$prefix}-col-md-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .#{$prefix}-col-md-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+  }
+  .#{$prefix}-col-md-2 {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+  }
+  .#{$prefix}-col-md-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .#{$prefix}-col-md-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+  .#{$prefix}-col-md-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+  }
+  .#{$prefix}-col-md-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .#{$prefix}-col-md-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%;
+  }
+  .#{$prefix}-col-md-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+  .#{$prefix}-col-md-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  .#{$prefix}-col-md-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+  }
+  .#{$prefix}-col-md-11 {
+    flex: 0 0 auto;
+    width: 91.66666667%;
+  }
+  .#{$prefix}-col-md-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+// -----------------------------------------------------
+// Columns - LG (≥992px)
+// -----------------------------------------------------
+
+@media (min-width: 992px) {
+  .#{$prefix}-col-lg {
+    flex: 1 0 0;
+  }
+  .#{$prefix}-col-lg-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .#{$prefix}-col-lg-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+  }
+  .#{$prefix}-col-lg-2 {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+  }
+  .#{$prefix}-col-lg-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .#{$prefix}-col-lg-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+  .#{$prefix}-col-lg-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+  }
+  .#{$prefix}-col-lg-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .#{$prefix}-col-lg-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%;
+  }
+  .#{$prefix}-col-lg-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+  .#{$prefix}-col-lg-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  .#{$prefix}-col-lg-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+  }
+  .#{$prefix}-col-lg-11 {
+    flex: 0 0 auto;
+    width: 91.66666667%;
+  }
+  .#{$prefix}-col-lg-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+// -----------------------------------------------------
+// Columns - XL (≥1200px)
+// -----------------------------------------------------
+
+@media (min-width: 1200px) {
+  .#{$prefix}-col-xl {
+    flex: 1 0 0;
+  }
+  .#{$prefix}-col-xl-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .#{$prefix}-col-xl-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+  }
+  .#{$prefix}-col-xl-2 {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+  }
+  .#{$prefix}-col-xl-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .#{$prefix}-col-xl-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+  .#{$prefix}-col-xl-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+  }
+  .#{$prefix}-col-xl-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .#{$prefix}-col-xl-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%;
+  }
+  .#{$prefix}-col-xl-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+  .#{$prefix}-col-xl-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  .#{$prefix}-col-xl-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+  }
+  .#{$prefix}-col-xl-11 {
+    flex: 0 0 auto;
+    width: 91.66666667%;
+  }
+  .#{$prefix}-col-xl-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+// -----------------------------------------------------
+// Columns - XXL (≥1400px)
+// -----------------------------------------------------
+
+@media (min-width: 1400px) {
+  .#{$prefix}-col-xxl {
+    flex: 1 0 0;
+  }
+  .#{$prefix}-col-xxl-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .#{$prefix}-col-xxl-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+  }
+  .#{$prefix}-col-xxl-2 {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+  }
+  .#{$prefix}-col-xxl-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .#{$prefix}-col-xxl-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+  .#{$prefix}-col-xxl-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+  }
+  .#{$prefix}-col-xxl-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .#{$prefix}-col-xxl-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%;
+  }
+  .#{$prefix}-col-xxl-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+  .#{$prefix}-col-xxl-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  .#{$prefix}-col-xxl-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+  }
+  .#{$prefix}-col-xxl-11 {
+    flex: 0 0 auto;
+    width: 91.66666667%;
+  }
+  .#{$prefix}-col-xxl-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+// -----------------------------------------------------
+// Gutter Utilities
+// -----------------------------------------------------
+
+.#{$prefix}-g-0, .#{$prefix}-gx-0 {
+  #{$css-var-prefix}-gutter-x: 0;
+}
+
+.#{$prefix}-g-0, .#{$prefix}-gy-0 {
+  #{$css-var-prefix}-gutter-y: 0;
+}
+
+.#{$prefix}-g-1, .#{$prefix}-gx-1 {
+  #{$css-var-prefix}-gutter-x: 0.25rem;
+}
+
+.#{$prefix}-g-1, .#{$prefix}-gy-1 {
+  #{$css-var-prefix}-gutter-y: 0.25rem;
+}
+
+.#{$prefix}-g-2, .#{$prefix}-gx-2 {
+  #{$css-var-prefix}-gutter-x: 0.5rem;
+}
+
+.#{$prefix}-g-2, .#{$prefix}-gy-2 {
+  #{$css-var-prefix}-gutter-y: 0.5rem;
+}
+
+.#{$prefix}-g-3, .#{$prefix}-gx-3 {
+  #{$css-var-prefix}-gutter-x: 1rem;
+}
+
+.#{$prefix}-g-3, .#{$prefix}-gy-3 {
+  #{$css-var-prefix}-gutter-y: 1rem;
+}
+
+.#{$prefix}-g-4, .#{$prefix}-gx-4 {
+  #{$css-var-prefix}-gutter-x: 1.5rem;
+}
+
+.#{$prefix}-g-4, .#{$prefix}-gy-4 {
+  #{$css-var-prefix}-gutter-y: 1.5rem;
+}
+
+.#{$prefix}-g-5, .#{$prefix}-gx-5 {
+  #{$css-var-prefix}-gutter-x: 3rem;
+}
+
+.#{$prefix}-g-5, .#{$prefix}-gy-5 {
+  #{$css-var-prefix}-gutter-y: 3rem;
+}
+
+// -----------------------------------------------------
+// Flex Utilities (additional)
+// -----------------------------------------------------
+
+.#{$prefix}-flex-row-fluid {
+  flex: 1 auto;
+  min-width: 0;
+}
+
+.#{$prefix}-flex-root {
+  flex: 1;
+}
+
+.#{$prefix}-flex-column-fluid {
+  flex: 1 0 auto;
+}
+
+// Container system
+.#{$prefix}-container,
+.#{$prefix}-container-fluid,
+.#{$prefix}-container-sm,
+.#{$prefix}-container-md,
+.#{$prefix}-container-lg,
+.#{$prefix}-container-xl,
+.#{$prefix}-container-xxl {
+  #{$css-var-prefix}-gutter-x: 1.5rem;
+  #{$css-var-prefix}-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(#{css-var('gutter-x')} * 0.5);
+  padding-left: calc(#{css-var('gutter-x')} * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .#{$prefix}-container,
+  .#{$prefix}-container-sm {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .#{$prefix}-container,
+  .#{$prefix}-container-sm,
+  .#{$prefix}-container-md {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .#{$prefix}-container,
+  .#{$prefix}-container-sm,
+  .#{$prefix}-container-md,
+  .#{$prefix}-container-lg {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .#{$prefix}-container,
+  .#{$prefix}-container-sm,
+  .#{$prefix}-container-md,
+  .#{$prefix}-container-lg,
+  .#{$prefix}-container-xl {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .#{$prefix}-container,
+  .#{$prefix}-container-sm,
+  .#{$prefix}-container-md,
+  .#{$prefix}-container-lg,
+  .#{$prefix}-container-xl,
+  .#{$prefix}-container-xxl {
+    max-width: 1320px;
+  }
+}

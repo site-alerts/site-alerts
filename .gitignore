@@ -1,0 +1,28 @@
+# ===========================================
+# My Starter Kit - Git Ignore
+# ===========================================
+
+# Dependencies
+/node_modules/
+
+# IDE / Editor
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Cache
+*.cache
+.sass-cache/

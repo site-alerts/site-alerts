@@ -1,0 +1,262 @@
+// =====================================================
+// SA Admin UI - Bootstrap Mixins (Extracted)
+// =====================================================
+
+@use "./functions" as fn;
+
+// Clearfix
+@mixin sa-clearfix() {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+// Text truncate
+@mixin sa-text-truncate() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Visually hidden
+@mixin sa-visually-hidden() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Reset text
+@mixin sa-reset-text() {
+  // WP-admin friendly font stack + generic fallback
+  font-family: var(--sa-font-family-sans-serif, sans-serif);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+
+  // Fallback for older browsers + proper logical alignment for RTL/LTR
+  text-align: left;
+  @supports (text-align: start) {
+    text-align: start;
+  }
+
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  white-space: normal;
+  word-spacing: normal;
+  line-break: auto;
+}
+
+// Transition
+@mixin sa-transition($transition...) {
+  @if length($transition) == 0 {
+    $transition: var(--sa-transition-base);
+  }
+  transition: $transition;
+}
+
+// Box shadow
+@mixin sa-box-shadow($shadow...) {
+  @if length($shadow) > 0 {
+    box-shadow: $shadow;
+  } @else {
+    box-shadow: none;
+  }
+}
+
+// Border radius
+@mixin sa-border-radius($radius: var(--sa-border-radius), $fallback-border-radius: false) {
+  border-radius: $radius;
+}
+
+@mixin sa-border-top-radius($radius: var(--sa-border-radius)) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin sa-border-bottom-radius($radius: var(--sa-border-radius)) {
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@mixin sa-border-start-radius($radius: var(--sa-border-radius)) {
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@mixin sa-border-end-radius($radius: var(--sa-border-radius)) {
+  border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+// Button variant
+@mixin sa-button-variant(
+  $background,
+  $border,
+  $color: #fff,
+  $hover-background: fn.shade-color($background, 15%),
+  $hover-border: fn.shade-color($border, 20%),
+  $hover-color: $color,
+  $active-background: fn.shade-color($background, 20%),
+  $active-border: fn.shade-color($border, 25%),
+  $active-color: $color,
+  $disabled-background: $background,
+  $disabled-border: $border,
+  $disabled-color: $color
+) {
+  --sa-btn-color: #{$color};
+  --sa-btn-bg: #{$background};
+  --sa-btn-border-color: #{$border};
+  --sa-btn-hover-color: #{$hover-color};
+  --sa-btn-hover-bg: #{$hover-background};
+  --sa-btn-hover-border-color: #{$hover-border};
+  --sa-btn-active-color: #{$active-color};
+  --sa-btn-active-bg: #{$active-background};
+  --sa-btn-active-border-color: #{$active-border};
+  --sa-btn-disabled-color: #{$disabled-color};
+  --sa-btn-disabled-bg: #{$disabled-background};
+  --sa-btn-disabled-border-color: #{$disabled-border};
+}
+
+// Button outline variant
+@mixin sa-button-outline-variant(
+  $color,
+  $color-hover: #fff,
+  $active-background: $color,
+  $active-border: $color,
+  $active-color: #fff
+) {
+  --sa-btn-color: #{$color};
+  --sa-btn-border-color: #{$color};
+  --sa-btn-hover-color: #{$color-hover};
+  --sa-btn-hover-bg: #{$color};
+  --sa-btn-hover-border-color: #{$color};
+  --sa-btn-active-color: #{$active-color};
+  --sa-btn-active-bg: #{$active-background};
+  --sa-btn-active-border-color: #{$active-border};
+  --sa-btn-disabled-color: #{$color};
+  --sa-btn-disabled-bg: transparent;
+  --sa-btn-disabled-border-color: #{$color};
+  --sa-gradient: none;
+}
+
+// Alert variant
+@mixin sa-alert-variant($background, $border, $color) {
+  --sa-alert-color: #{$color};
+  --sa-alert-bg: #{$background};
+  --sa-alert-border-color: #{$border};
+  --sa-alert-link-color: fn.shade-color($color, 20%);
+}
+
+// Badge variant
+@mixin sa-badge-variant($bg) {
+  --sa-badge-color: #{fn.color-contrast($bg)};
+  --sa-badge-bg: #{$bg};
+}
+
+// Form control focus
+@mixin sa-form-control-focus() {
+  &:focus {
+    color: var(--sa-body-color);
+    background-color: var(--sa-paper-bg);
+    border-color: var(--sa-primary);
+    outline: 0;
+    box-shadow: 0 0 0 0.15rem rgba(var(--sa-primary-rgb), 0.25);
+  }
+}
+
+// Form validation state
+@mixin sa-form-validation-state($state, $color, $icon) {
+  .sa-#{$state}-feedback {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.8125rem;
+    color: $color;
+  }
+
+  .sa-#{$state}-tooltip {
+    position: absolute;
+    top: 100%;
+    z-index: 5;
+    display: none;
+    max-width: 100%;
+    padding: 0.25rem 0.5rem;
+    margin-top: 0.1rem;
+    font-size: 0.8125rem;
+    color: #fff;
+    background-color: rgba($color, 0.9);
+    border-radius: var(--sa-border-radius);
+  }
+}
+
+// Caret
+@mixin sa-caret-down() {
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
+@mixin sa-caret-up() {
+  border-top: 0;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0.3em solid;
+  border-left: 0.3em solid transparent;
+}
+
+@mixin sa-caret-end() {
+  border-top: 0.3em solid transparent;
+  border-right: 0;
+  border-bottom: 0.3em solid transparent;
+  border-left: 0.3em solid;
+}
+
+@mixin sa-caret-start() {
+  border-top: 0.3em solid transparent;
+  border-right: 0.3em solid;
+  border-bottom: 0.3em solid transparent;
+}
+
+@mixin sa-caret($direction: down) {
+  &::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    @if $direction == down {
+      @include sa-caret-down();
+    } @else if $direction == up {
+      @include sa-caret-up();
+    } @else if $direction == end {
+      @include sa-caret-end();
+    }
+  }
+
+  @if $direction == start {
+    &::after {
+      display: none;
+    }
+    &::before {
+      display: inline-block;
+      margin-right: 0.255em;
+      vertical-align: 0.255em;
+      content: "";
+      @include sa-caret-start();
+    }
+  }
+
+  &:empty::after {
+    margin-left: 0;
+  }
+}

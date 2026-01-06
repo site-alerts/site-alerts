@@ -1,0 +1,117 @@
+// =====================================================
+// Admin UI - Alert Component
+// =====================================================
+
+@use "../prefix" as *;
+
+.#{$prefix}-alert {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: #{css-var('border-radius')};
+}
+
+.#{$prefix}-alert-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.#{$prefix}-alert-content {
+  flex: 1;
+}
+
+.#{$prefix}-alert-title {
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.#{$prefix}-alert-message {
+  font-size: 0.875rem;
+}
+
+.#{$prefix}-alert-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  padding: 0.25rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  opacity: 0.5;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.#{$prefix}-alert-dismissible {
+  padding-right: 2.5rem;
+}
+
+// Alert variants
+.#{$prefix}-alert-primary {
+  color: #1e40af;
+  background-color: #dbeafe;
+  border-color: #93c5fd;
+
+  .#{$prefix}-alert-icon {
+    color: #{css-var('primary')};
+  }
+}
+
+.#{$prefix}-alert-secondary {
+  color: #53555e;
+  background-color: #ebebed;
+  border-color: #cdcfd4;
+
+  .#{$prefix}-alert-icon {
+    color: #{css-var('secondary')};
+  }
+}
+
+.#{$prefix}-alert-success {
+  color: #1a824a;
+  background-color: #ddf6e8;
+  border-color: #abe9c7;
+
+  .#{$prefix}-alert-icon {
+    color: #{css-var('success')};
+  }
+}
+
+.#{$prefix}-alert-danger {
+  color: #a63235;
+  background-color: #ffe2e3;
+  border-color: #ffb9bb;
+
+  .#{$prefix}-alert-icon {
+    color: #{css-var('danger')};
+  }
+}
+
+.#{$prefix}-alert-warning {
+  color: #a66829;
+  background-color: #fff0e1;
+  border-color: #ffdab6;
+
+  .#{$prefix}-alert-icon {
+    color: #{css-var('warning')};
+  }
+}
+
+.#{$prefix}-alert-info {
+  color: #007a88;
+  background-color: #d6f4f8;
+  border-color: #9ce4ed;
+
+  .#{$prefix}-alert-icon {
+    color: #{css-var('info')};
+  }
+}

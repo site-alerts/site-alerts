@@ -1,0 +1,210 @@
+// =====================================================
+// Admin UI - Typography Utilities
+// =====================================================
+// This file contains typography utility classes only.
+//
+// Note: Base typography for .#{$prefix}-wrap (font-family,
+// font-size, line-height, heading resets) is defined in
+// layout/_framework.scss
+// =====================================================
+
+@use "../prefix" as *;
+
+// -----------------------------------------------------
+// Heading Utility Classes
+// -----------------------------------------------------
+// For applying heading styles to non-heading elements
+
+.#{$prefix}-h1 {
+  font-size: #{css-var('h1-font-size')};
+}
+
+.#{$prefix}-h2 {
+  font-size: #{css-var('h2-font-size')};
+}
+
+.#{$prefix}-h3 {
+  font-size: #{css-var('h3-font-size')};
+}
+
+.#{$prefix}-h4 {
+  font-size: #{css-var('h4-font-size')};
+}
+
+.#{$prefix}-h5 {
+  font-size: #{css-var('h5-font-size')};
+}
+
+.#{$prefix}-h6 {
+  font-size: #{css-var('h6-font-size')};
+}
+
+.#{$prefix}-h1, .#{$prefix}-h2, .#{$prefix}-h3,
+.#{$prefix}-h4, .#{$prefix}-h5, .#{$prefix}-h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: #{css-var('font-weight-semibold')};
+  line-height: 1.2;
+  color: #{css-var('heading-color')};
+}
+
+// -----------------------------------------------------
+// Display Headings
+// -----------------------------------------------------
+
+.#{$prefix}-display-1 {
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.#{$prefix}-display-2 {
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.#{$prefix}-display-3 {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.#{$prefix}-display-4 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.#{$prefix}-display-5 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.#{$prefix}-display-6 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+// -----------------------------------------------------
+// Text Size Utilities
+// -----------------------------------------------------
+
+.#{$prefix}-lead {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.#{$prefix}-small {
+  font-size: 0.8125rem;
+}
+
+// -----------------------------------------------------
+// Font Weight Utilities
+// -----------------------------------------------------
+
+.#{$prefix}-fw-light {
+  font-weight: 300;
+}
+
+.#{$prefix}-fw-normal {
+  font-weight: 400;
+}
+
+.#{$prefix}-fw-medium {
+  font-weight: 500;
+}
+
+.#{$prefix}-fw-semibold {
+  font-weight: 600;
+}
+
+.#{$prefix}-fw-bold {
+  font-weight: 700;
+}
+
+// -----------------------------------------------------
+// Text Alignment Utilities
+// -----------------------------------------------------
+
+.#{$prefix}-text-start {
+  text-align: left;
+}
+
+.#{$prefix}-text-center {
+  text-align: center;
+}
+
+.#{$prefix}-text-end {
+  text-align: right;
+}
+
+// -----------------------------------------------------
+// Text Transform Utilities
+// -----------------------------------------------------
+
+.#{$prefix}-text-lowercase {
+  text-transform: lowercase;
+}
+
+.#{$prefix}-text-uppercase {
+  text-transform: uppercase;
+}
+
+.#{$prefix}-text-capitalize {
+  text-transform: capitalize;
+}
+
+// -----------------------------------------------------
+// Text Decoration Utilities
+// -----------------------------------------------------
+
+.#{$prefix}-text-decoration-none {
+  text-decoration: none;
+}
+
+.#{$prefix}-text-decoration-underline {
+  text-decoration: underline;
+}
+
+// -----------------------------------------------------
+// Text Wrapping Utilities
+// -----------------------------------------------------
+
+.#{$prefix}-text-wrap {
+  white-space: normal;
+}
+
+.#{$prefix}-text-nowrap {
+  white-space: nowrap;
+}
+
+.#{$prefix}-text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// -----------------------------------------------------
+// List Utilities
+// -----------------------------------------------------
+
+.#{$prefix}-list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.#{$prefix}-list-inline {
+  padding-left: 0;
+  list-style: none;
+
+  .#{$prefix}-list-inline-item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+}

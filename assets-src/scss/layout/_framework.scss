@@ -1,0 +1,191 @@
+// =====================================================
+// Admin UI - Framework Layout
+// =====================================================
+// Main wrapper component that provides:
+// - Layout structure (flex container)
+// - CSS isolation from WordPress admin
+// - Base typography
+// - Element resets (links, headings, forms, etc.)
+// =====================================================
+
+@use "../prefix" as *;
+@use "../base/variables" as *;
+@use "../base/variables-dark" as *;
+
+.#{$prefix}-wrap {
+  // Layout
+  margin: 0 0 0 -20px;
+  display: flex;
+  flex-direction: column;
+  min-block-size: calc(100vh - 32px); // Account for WP admin bar
+
+  // Base styles
+  background-color: #{css-var('body-bg')};
+  color: #{css-var('body-color')};
+  padding: 1.5rem;
+
+  // Typography
+  font-family: #{css-var('font-family')};
+  font-size: #{css-var('font-size-base')};
+  line-height: #{css-var('line-height-base')};
+
+  // Reset box-sizing for all elements
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  // Reset WordPress link styles
+  a {
+    color: #{css-var('link-color')};
+    text-decoration: none;
+    box-shadow: none;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      color: #{css-var('link-hover-color')};
+      text-decoration: none;
+      box-shadow: none;
+    }
+  }
+
+  // Reset WordPress paragraph/text styles
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  hr {
+    margin: 1rem 0;
+    border: 0;
+    border-top: 1px solid #{css-var('border-color')};
+  }
+
+  // Reset WordPress button styles within our wrapper
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+  }
+
+  // Reset WordPress heading styles
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: #{css-var('font-weight-semibold')};
+    line-height: 1.2;
+    color: #{css-var('heading-color')};
+  }
+
+  h1 {
+    font-size: #{css-var('h1-font-size')};
+  }
+
+  h2 {
+    font-size: #{css-var('h2-font-size')};
+  }
+
+  h3 {
+    font-size: #{css-var('h3-font-size')};
+  }
+
+  h4 {
+    font-size: #{css-var('h4-font-size')};
+  }
+
+  h5 {
+    font-size: #{css-var('h5-font-size')};
+  }
+
+  h6 {
+    font-size: #{css-var('h6-font-size')};
+  }
+
+  // Reset WordPress list styles
+  ul, ol {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+  }
+
+  // Reset WordPress table styles
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  // Override WordPress .button class within our components
+  .#{$prefix}-btn {
+    &.button {
+      // Reset WordPress .button styles
+      background: none;
+      border: none;
+      box-shadow: none;
+      text-shadow: none;
+      padding: 0;
+      height: auto;
+      line-height: inherit;
+    }
+  }
+}
+
+.#{$prefix}-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  inline-size: 100%;
+  min-block-size: 1px;
+  padding-block-end: 0;
+  justify-content: flex-start;
+}
+
+// =====================================================
+// WordPress Admin Overrides (for plugin pages only)
+// =====================================================
+
+// Light theme (default)
+body:has(.#{$prefix}-wrap) {
+  background-color: $sa-body-bg;
+
+  #wpfooter {
+    background-color: $sa-body-bg;
+    color: $sa-muted-color;
+
+    a {
+      color: $sa-link-color;
+
+      &:hover {
+        color: $sa-link-hover-color;
+      }
+    }
+  }
+}
+
+// Dark theme
+body:has(.#{$prefix}-wrap#{data-attr('theme', 'dark')}) {
+  background-color: $sa-dark-body-bg;
+
+  #wpfooter {
+    background-color: $sa-dark-body-bg;
+    color: $sa-dark-muted-color;
+
+    a {
+      color: $sa-dark-link-color;
+
+      &:hover {
+        color: $sa-dark-link-hover-color;
+      }
+    }
+  }
+}

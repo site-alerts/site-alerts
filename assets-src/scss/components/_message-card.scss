@@ -1,0 +1,94 @@
+// =====================================================
+// Admin UI - Message Card Component
+// =====================================================
+// Empty state message cards with icon, title, text, helper.
+// Used for informational states in alerts dashboard.
+// =====================================================
+
+@use "../prefix" as *;
+
+.#{$prefix}-message-card {
+  border: 1px solid #{css-var('border-color')};
+  border-radius: #{css-var('border-radius')};
+  background-color: #{css-var('card-bg')};
+}
+
+.#{$prefix}-message-card__body {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.#{$prefix}-message-card__icon {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #{css-var('info-bg')};
+
+  [class^="#{$prefix}-icon--"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: #{css-var('info')};
+  }
+}
+
+.#{$prefix}-message-card__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.#{$prefix}-message-card__title {
+  margin: 0 0 0.375rem 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #{css-var('heading-color')};
+}
+
+.#{$prefix}-message-card__text {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #{css-var('text-color')};
+}
+
+.#{$prefix}-message-card__helper {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.8125rem;
+  color: #{css-var('muted-color')};
+}
+
+// Color variants
+.#{$prefix}-message-card--info {
+  .#{$prefix}-message-card__icon {
+    background-color: #e8f7f9;
+
+    [class^="#{$prefix}-icon--"] {
+      background-color: #{css-var('info')};
+    }
+  }
+}
+
+.#{$prefix}-message-card--success {
+  .#{$prefix}-message-card__icon {
+    background-color: #e6f7ed;
+
+    [class^="#{$prefix}-icon--"] {
+      background-color: #{css-var('success')};
+    }
+  }
+}
+
+.#{$prefix}-message-card--warning {
+  .#{$prefix}-message-card__icon {
+    background-color: #fff5eb;
+
+    [class^="#{$prefix}-icon--"] {
+      background-color: #{css-var('warning')};
+    }
+  }
+}

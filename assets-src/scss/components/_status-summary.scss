@@ -1,0 +1,60 @@
+// =====================================================
+// Admin UI - Status Summary Component
+// =====================================================
+// Page-level status banner with color variants.
+// Used on alerts dashboard to show overall status.
+// =====================================================
+
+@use "../prefix" as *;
+
+.#{$prefix}-status-summary {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.875rem 1rem;
+  border-radius: #{css-var('border-radius')};
+  border-left: 4px solid transparent;
+}
+
+.#{$prefix}-status-summary__content {
+  flex: 1;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.#{$prefix}-status-summary__title {
+  font-weight: 600;
+}
+
+.#{$prefix}-status-summary__separator {
+  margin: 0 0.375rem;
+  opacity: 0.6;
+}
+
+.#{$prefix}-status-summary__text {
+  color: inherit;
+}
+
+// Color variants (matching _alert.scss patterns)
+.#{$prefix}-status-summary--info {
+  color: #007a88;
+  background-color: #d6f4f8;
+  border-left-color: #{css-var('info')};
+}
+
+.#{$prefix}-status-summary--success {
+  color: #1a824a;
+  background-color: #ddf6e8;
+  border-left-color: #{css-var('success')};
+}
+
+.#{$prefix}-status-summary--warning {
+  color: #a66829;
+  background-color: #fff0e1;
+  border-left-color: #{css-var('warning')};
+}
+
+.#{$prefix}-status-summary--danger {
+  color: #a63235;
+  background-color: #ffe2e3;
+  border-left-color: #{css-var('danger')};
+}

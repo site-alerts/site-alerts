@@ -1,0 +1,47 @@
+// =====================================================
+// Admin UI - Main Entry File
+// =====================================================
+// Prefix Configuration: See config/prefix.config.cjs
+// Regenerate prefix: npm run build
+// =====================================================
+
+// 0) PREFIX CONFIGURATION (must be first)
+// Auto-generated from config/prefix.config.cjs
+@use "prefix" as *;
+
+// 1) Bootstrap utilities (extracted, no full Bootstrap)
+@use "bootstrap/functions";
+@use "bootstrap/mixins";
+
+// 2) Base - Variables and CSS Custom Properties
+@use "base/variables";
+@use "base/variables-dark";
+@use "base/root";
+@use "base/typography";
+@use "base/global";
+
+// 3) UI Components (prefix-aware)
+@use "components/card";
+@use "components/buttons";
+@use "components/alert";
+@use "components/badge";
+@use "components/icons";
+@use "components/stat-card";
+@use "components/alert-card";
+@use "components/table";
+@use "components/empty-state";
+@use "components/message-card";
+@use "components/list-card";
+@use "components/promo-card";
+@use "components/status-summary";
+
+// 4) Form Components
+@use "components/forms";
+@use "components/form-check";
+@use "components/input-group";
+
+// 5) Layout
+@use "layout/framework";
+@use "layout/header";
+@use "layout/grid";
+@use "layout/section";

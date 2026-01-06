@@ -1,0 +1,258 @@
+// =====================================================
+// Admin UI - SCSS Variables (Light Theme)
+// =====================================================
+
+// -----------------------------------------------------
+// Colors
+// -----------------------------------------------------
+
+// Brand Colors
+$sa-primary: #3b82f6 !default;
+$sa-secondary: #808390 !default;
+$sa-success: #28c76f !default;
+$sa-info: #00bad1 !default;
+$sa-warning: #ff9f43 !default;
+$sa-danger: #ff4c51 !default;
+$sa-light: #dfdfe3 !default;
+$sa-dark: #2f3349 !default;
+
+// Gray Scale
+$sa-white: #fff !default;
+$sa-black: #2f2b3d !default;
+$sa-gray-25: #fcfcfc !default;
+$sa-gray-50: #f3f2f3 !default;
+$sa-gray-100: #eaeaec !default;
+$sa-gray-200: #e6e6e8 !default;
+$sa-gray-300: #c1bfc5 !default;
+$sa-gray-400: #acaab1 !default;
+$sa-gray-500: #97959e !default;
+$sa-gray-600: #82808b !default;
+$sa-gray-700: #6d6b77 !default;
+$sa-gray-800: #595564 !default;
+$sa-gray-900: #444050 !default;
+
+// Background & Surface Colors
+$sa-body-bg: #f8f7fa !default;
+$sa-paper-bg: #ffffff !default;
+$sa-card-bg: #ffffff !default;
+
+// Text Colors
+$sa-body-color: #6d6b77 !default;
+$sa-heading-color: #444050 !default;
+$sa-muted-color: #acaab1 !default;
+
+// Border Colors
+$sa-border-color: #e6e6e8 !default;
+
+// Link Colors
+$sa-link-color: $sa-primary !default;
+$sa-link-hover-color: #2563eb !default;
+
+// -----------------------------------------------------
+// Typography
+// -----------------------------------------------------
+
+$sa-font-family-sans-serif: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !default;
+$sa-font-family-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, monospace !default;
+
+$sa-font-size-base: 0.9375rem !default;
+$sa-font-size-sm: 0.8125rem !default;
+$sa-font-size-lg: 1.0625rem !default;
+$sa-font-size-xs: 0.75rem !default;
+
+$sa-font-weight-light: 300 !default;
+$sa-font-weight-normal: 400 !default;
+$sa-font-weight-medium: 500 !default;
+$sa-font-weight-semibold: 600 !default;
+$sa-font-weight-bold: 700 !default;
+
+$sa-line-height-base: 1.375 !default;
+
+// Heading Font Sizes
+$sa-h1-font-size: 2.125rem !default;
+$sa-h2-font-size: 1.625rem !default;
+$sa-h3-font-size: 1.375rem !default;
+$sa-h4-font-size: 1.125rem !default;
+$sa-h5-font-size: 1rem !default;
+$sa-h6-font-size: 0.9375rem !default;
+
+// -----------------------------------------------------
+// Spacing
+// -----------------------------------------------------
+
+$sa-spacer: 1rem !default;
+
+// -----------------------------------------------------
+// Borders & Radius
+// -----------------------------------------------------
+
+$sa-border-width: 1px !default;
+$sa-border-style: solid !default;
+$sa-border-radius: 0.375rem !default;
+$sa-border-radius-sm: 0.25rem !default;
+$sa-border-radius-lg: 0.5rem !default;
+$sa-border-radius-xl: 0.625rem !default;
+$sa-border-radius-pill: 50rem !default;
+
+// -----------------------------------------------------
+// Shadows
+// -----------------------------------------------------
+
+$sa-shadow-color: rgba(47, 43, 61, 0.14) !default;
+$sa-box-shadow: 0 0.1875rem 0.75rem 0 $sa-shadow-color !default;
+$sa-box-shadow-sm: 0 0.125rem 0.5rem 0 rgba(47, 43, 61, 0.12) !default;
+$sa-box-shadow-lg: 0 0.25rem 1.125rem 0 rgba(47, 43, 61, 0.16) !default;
+
+// -----------------------------------------------------
+// Transitions
+// -----------------------------------------------------
+
+$sa-transition-base: all 0.2s ease-in-out !default;
+$sa-transition-fade: opacity 0.15s linear !default;
+$sa-transition-collapse: height 0.35s ease !default;
+
+// -----------------------------------------------------
+// Z-Index
+// -----------------------------------------------------
+
+$sa-zindex-dropdown: 1000 !default;
+$sa-zindex-sticky: 1020 !default;
+$sa-zindex-fixed: 1030 !default;
+$sa-zindex-modal-backdrop: 1050 !default;
+$sa-zindex-modal: 1055 !default;
+$sa-zindex-tooltip: 1070 !default;
+$sa-zindex-toast: 1080 !default;
+
+// -----------------------------------------------------
+// Components - Card
+// -----------------------------------------------------
+
+$sa-card-border-radius: $sa-border-radius-lg !default;
+$sa-card-spacer-y: 1.5rem !default;
+$sa-card-spacer-x: 1.5rem !default;
+
+// -----------------------------------------------------
+// Components - Button
+// -----------------------------------------------------
+
+$sa-btn-padding-y: 0.5rem !default;
+$sa-btn-padding-x: 1.25rem !default;
+$sa-btn-border-radius: $sa-border-radius !default;
+
+// -----------------------------------------------------
+// Components - Form Inputs
+// -----------------------------------------------------
+
+$sa-input-padding-y: 0.426rem !default;
+$sa-input-padding-x: 0.9375rem !default;
+$sa-input-padding-y-sm: 0.25rem !default;
+$sa-input-padding-x-sm: 0.625rem !default;
+$sa-input-padding-y-lg: 0.5625rem !default;
+$sa-input-padding-x-lg: 1rem !default;
+$sa-input-font-size: $sa-font-size-base !default;
+$sa-input-font-size-sm: $sa-font-size-sm !default;
+$sa-input-font-size-lg: $sa-font-size-lg !default;
+$sa-input-line-height: 1.625 !default;
+$sa-input-border-width: 1px !default;
+$sa-input-focus-border-width: 2px !default;
+$sa-input-border-radius: $sa-border-radius !default;
+$sa-input-border-radius-sm: $sa-border-radius-sm !default;
+$sa-input-border-radius-lg: $sa-border-radius-lg !default;
+$sa-input-border-color: $sa-border-color !default;
+$sa-input-hover-border-color: $sa-gray-600 !default;
+$sa-input-focus-border-color: $sa-primary !default;
+$sa-input-disabled-bg: $sa-gray-100 !default;
+$sa-input-disabled-border-color: $sa-gray-200 !default;
+$sa-input-placeholder-color: $sa-gray-400 !default;
+$sa-input-height: 2.375rem !default;
+$sa-input-height-sm: 1.875rem !default;
+$sa-input-height-lg: 3rem !default;
+
+// -----------------------------------------------------
+// Components - Form Select
+// -----------------------------------------------------
+
+$sa-form-select-padding-y: $sa-input-padding-y !default;
+$sa-form-select-padding-x: $sa-input-padding-x !default;
+$sa-form-select-indicator-padding: 2.625rem !default;
+
+// -----------------------------------------------------
+// Components - Form Check (Checkbox/Radio/Switch)
+// -----------------------------------------------------
+
+$sa-form-check-input-width: 1.125rem !default;
+$sa-form-check-padding-start: 1.625rem !default;
+$sa-form-check-margin-bottom: 0.25rem !default;
+$sa-form-check-input-bg: transparent !default;
+$sa-form-check-input-border-color: $sa-gray-400 !default;
+$sa-form-check-input-checked-bg: $sa-primary !default;
+$sa-form-check-input-checked-border-color: $sa-primary !default;
+$sa-form-check-input-disabled-bg: $sa-gray-200 !default;
+
+// -----------------------------------------------------
+// Components - Form Switch
+// -----------------------------------------------------
+
+$sa-form-switch-width: 2.125rem !default;
+$sa-form-switch-height: 1.25rem !default;
+$sa-form-switch-padding-start: 2.625rem !default;
+$sa-form-switch-bg: $sa-gray-300 !default;
+
+// -----------------------------------------------------
+// Components - Form Validation
+// -----------------------------------------------------
+
+$sa-form-feedback-valid-color: $sa-success !default;
+$sa-form-feedback-invalid-color: $sa-danger !default;
+
+// -----------------------------------------------------
+// Components - Table
+// -----------------------------------------------------
+
+$sa-table-cell-padding-y: 0.75rem !default;
+$sa-table-cell-padding-x: 1rem !default;
+
+// -----------------------------------------------------
+// Components - Modal
+// -----------------------------------------------------
+
+$sa-modal-content-border-radius: $sa-border-radius-lg !default;
+
+// -----------------------------------------------------
+// Components - Alert
+// -----------------------------------------------------
+
+$sa-alert-padding-y: 0.75rem !default;
+$sa-alert-padding-x: 1rem !default;
+
+// -----------------------------------------------------
+// Components - Badge
+// -----------------------------------------------------
+
+$sa-badge-padding-y: 0.35em !default;
+$sa-badge-padding-x: 0.65em !default;
+
+// -----------------------------------------------------
+// Components - Tooltip
+// -----------------------------------------------------
+
+$sa-tooltip-bg: $sa-dark !default;
+$sa-tooltip-color: $sa-white !default;
+
+// -----------------------------------------------------
+// Components - Progress
+// -----------------------------------------------------
+
+$sa-progress-height: 0.5rem !default;
+
+// -----------------------------------------------------
+// Components - Spinner
+// -----------------------------------------------------
+
+$sa-spinner-width: 2rem !default;
+
+// -----------------------------------------------------
+// Components - Stepper
+// -----------------------------------------------------
+
+$sa-stepper-step-size: 2.5rem !default;

@@ -1,0 +1,47 @@
+// =====================================================
+// Admin UI - Empty State Component
+// =====================================================
+// Placeholder display for empty lists/sections.
+// =====================================================
+
+@use "../prefix" as *;
+
+.#{$prefix}-empty-state {
+  text-align: center;
+  padding: 2rem 1.5rem;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &__icon {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    background-color: #{css-var('success')};
+
+    // Background circle
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 4rem;
+      height: 4rem;
+      border-radius: #{css-var('border-radius-pill')};
+      background-color: rgba(#{css-var('success-rgb')}, 0.16);
+      z-index: -1;
+    }
+  }
+
+  &__message {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: #{css-var('muted-color')};
+    max-width: 400px;
+  }
+}

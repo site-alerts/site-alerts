@@ -1,0 +1,123 @@
+// =====================================================
+// Admin UI - Card Component
+// =====================================================
+
+@use "../prefix" as *;
+
+.#{$prefix}-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #{css-var('card-bg')};
+  background-clip: border-box;
+  border: #{css-var('border-width')} solid #{css-var('border-color')};
+  border-radius: #{css-var('border-radius-lg')};
+  box-shadow: #{css-var('box-shadow-sm')};
+
+  > hr {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.#{$prefix}-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.5rem 0;
+  margin-bottom: 0;
+  background-color: transparent;
+  border-bottom: 0;
+
+  &:first-child {
+    border-radius: calc(#{css-var('border-radius-lg')} - 1px) calc(#{css-var('border-radius-lg')} - 1px) 0 0;
+  }
+}
+
+.#{$prefix}-card-header-content {
+  flex: 1;
+}
+
+.#{$prefix}-card-title {
+  margin-bottom: 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #{css-var('heading-color')};
+}
+
+.#{$prefix}-card-subtitle {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  font-size: 0.8125rem;
+  color: #{css-var('muted-color')};
+}
+
+.#{$prefix}-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.#{$prefix}-card-body {
+  flex: 1 1 auto;
+  padding: 1.5rem;
+  color: #{css-var('body-color')};
+}
+
+.#{$prefix}-card-footer {
+  padding: 1rem 1.5rem;
+  background-color: transparent;
+  border-top: #{css-var('border-width')} solid #{css-var('border-color')};
+
+  &:last-child {
+    border-radius: 0 0 calc(#{css-var('border-radius-lg')} - 1px) calc(#{css-var('border-radius-lg')} - 1px);
+  }
+}
+
+// Card variants
+.#{$prefix}-card-primary {
+  border-color: #{css-var('primary')};
+
+  .#{$prefix}-card-header {
+    background-color: #{css-var('primary')};
+    color: #fff;
+  }
+}
+
+.#{$prefix}-card-success {
+  border-color: #{css-var('success')};
+
+  .#{$prefix}-card-header {
+    background-color: #{css-var('success')};
+    color: #fff;
+  }
+}
+
+.#{$prefix}-card-danger {
+  border-color: #{css-var('danger')};
+
+  .#{$prefix}-card-header {
+    background-color: #{css-var('danger')};
+    color: #fff;
+  }
+}
+
+.#{$prefix}-card-warning {
+  border-color: #{css-var('warning')};
+
+  .#{$prefix}-card-header {
+    background-color: #{css-var('warning')};
+    color: #fff;
+  }
+}
+
+.#{$prefix}-card-info {
+  border-color: #{css-var('info')};
+
+  .#{$prefix}-card-header {
+    background-color: #{css-var('info')};
+    color: #fff;
+  }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ruleset name="Site Alerts">
+    <description>Custom ruleset for Site Alerts</description>
+
+    <!-- Set the text domain -->
+    <config name="text_domain" value="site-alerts"/>
+
+    <!-- Set the prefix for global functions, classes, etc. -->
+    <config name="prefixes" value="site_alerts_,sa_,SiteAlerts"/>
+
+    <!-- Exclude template files from global variable prefix requirement -->
+    <!-- Template variables like $field, $value, $args are local scope and safe -->
+    <rule ref="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound">
+        <exclude-pattern>*/templates/*</exclude-pattern>
+    </rule>
+
+</ruleset>

@@ -1,0 +1,23 @@
+{
+  "name": "starter/site-alerts",
+  "description": "A starter plugin template for WordPress development.",
+  "type": "project",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Mohammad Yari",
+      "email": "mhd.yari021@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "SiteAlerts\\": "src/"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

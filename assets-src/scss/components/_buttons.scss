@@ -1,0 +1,238 @@
+// =====================================================
+// Admin UI - Button Component
+// =====================================================
+
+@use "../prefix" as *;
+
+.#{$prefix}-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.375;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: #{css-var('border-radius')};
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.15rem rgba(#{css-var('primary-rgb')}, 0.25);
+  }
+
+  &:disabled,
+  &.#{$prefix}-disabled {
+    opacity: 0.65;
+    pointer-events: none;
+  }
+
+  i {
+    font-size: 1rem;
+  }
+}
+
+// Button sizes
+.#{$prefix}-btn-sm {
+  padding: 0.375rem 0.875rem;
+  font-size: 0.8125rem;
+}
+
+.#{$prefix}-btn-lg {
+  padding: 0.625rem 1.5rem;
+  font-size: 1.0625rem;
+}
+
+// Solid button variants
+.#{$prefix}-btn-primary {
+  color: #fff;
+  background-color: #{css-var('primary')};
+  border-color: #{css-var('primary')};
+
+  &:hover {
+    background-color: color-mix(in sRGB, #000 10%, #{css-var('primary')});
+    border-color: color-mix(in sRGB, #000 10%, #{css-var('primary')});
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.15rem rgba(#{css-var('primary-rgb')}, 0.5);
+  }
+}
+
+.#{$prefix}-btn-secondary {
+  color: #fff;
+  background-color: #{css-var('secondary')};
+  border-color: #{css-var('secondary')};
+
+  &:hover {
+    background-color: color-mix(in sRGB, #000 10%, #{css-var('secondary')});
+    border-color: color-mix(in sRGB, #000 10%, #{css-var('secondary')});
+  }
+}
+
+.#{$prefix}-btn-success {
+  color: #fff;
+  background-color: #{css-var('success')};
+  border-color: #{css-var('success')};
+
+  &:hover {
+    background-color: color-mix(in sRGB, #000 10%, #{css-var('success')});
+    border-color: color-mix(in sRGB, #000 10%, #{css-var('success')});
+  }
+}
+
+.#{$prefix}-btn-danger {
+  color: #fff;
+  background-color: #{css-var('danger')};
+  border-color: #{css-var('danger')};
+
+  &:hover {
+    background-color: color-mix(in sRGB, #000 10%, #{css-var('danger')});
+    border-color: color-mix(in sRGB, #000 10%, #{css-var('danger')});
+  }
+}
+
+.#{$prefix}-btn-warning {
+  color: #fff;
+  background-color: #{css-var('warning')};
+  border-color: #{css-var('warning')};
+
+  &:hover {
+    background-color: color-mix(in sRGB, #000 10%, #{css-var('warning')});
+    border-color: color-mix(in sRGB, #000 10%, #{css-var('warning')});
+  }
+}
+
+.#{$prefix}-btn-info {
+  color: #fff;
+  background-color: #{css-var('info')};
+  border-color: #{css-var('info')};
+
+  &:hover {
+    background-color: color-mix(in sRGB, #000 10%, #{css-var('info')});
+    border-color: color-mix(in sRGB, #000 10%, #{css-var('info')});
+  }
+}
+
+.#{$prefix}-btn-light {
+  color: #{css-var('heading-color')};
+  background-color: #{css-var('gray-200')};
+  border-color: #{css-var('gray-200')};
+
+  &:hover {
+    background-color: #{css-var('gray-300')};
+    border-color: #{css-var('gray-300')};
+  }
+}
+
+.#{$prefix}-btn-dark {
+  color: #fff;
+  background-color: #{css-var('gray-800')};
+  border-color: #{css-var('gray-800')};
+
+  &:hover {
+    background-color: #{css-var('gray-900')};
+    border-color: #{css-var('gray-900')};
+  }
+}
+
+// Outline button variants
+.#{$prefix}-btn-outline-primary {
+  color: #{css-var('primary')};
+  border-color: #{css-var('primary')};
+  background-color: transparent;
+
+  &:hover {
+    color: #{css-var('primary')};
+    background-color: color-mix(in sRGB, #{css-var('paper-bg')} 88%, #{css-var('primary')});
+  }
+}
+
+.#{$prefix}-btn-outline-secondary {
+  color: #{css-var('secondary')};
+  border-color: #{css-var('secondary')};
+  background-color: transparent;
+
+  &:hover {
+    color: #{css-var('secondary')};
+    background-color: color-mix(in sRGB, #{css-var('paper-bg')} 88%, #{css-var('secondary')});
+  }
+}
+
+.#{$prefix}-btn-outline-success {
+  color: #{css-var('success')};
+  border-color: #{css-var('success')};
+  background-color: transparent;
+
+  &:hover {
+    color: #{css-var('success')};
+    background-color: color-mix(in sRGB, #{css-var('paper-bg')} 88%, #{css-var('success')});
+  }
+}
+
+.#{$prefix}-btn-outline-danger {
+  color: #{css-var('danger')};
+  border-color: #{css-var('danger')};
+  background-color: transparent;
+
+  &:hover {
+    color: #{css-var('danger')};
+    background-color: color-mix(in sRGB, #{css-var('paper-bg')} 88%, #{css-var('danger')});
+  }
+}
+
+.#{$prefix}-btn-outline-warning {
+  color: #{css-var('warning')};
+  border-color: #{css-var('warning')};
+  background-color: transparent;
+
+  &:hover {
+    color: #{css-var('warning')};
+    background-color: color-mix(in sRGB, #{css-var('paper-bg')} 88%, #{css-var('warning')});
+  }
+}
+
+.#{$prefix}-btn-outline-info {
+  color: #{css-var('info')};
+  border-color: #{css-var('info')};
+  background-color: transparent;
+
+  &:hover {
+    color: #{css-var('info')};
+    background-color: color-mix(in sRGB, #{css-var('paper-bg')} 88%, #{css-var('info')});
+  }
+}
+
+// Button groups
+.#{$prefix}-btn-group {
+  display: inline-flex;
+
+  > .#{$prefix}-btn {
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: #{css-var('border-radius')};
+      border-bottom-left-radius: #{css-var('border-radius')};
+    }
+
+    &:last-child {
+      border-top-right-radius: #{css-var('border-radius')};
+      border-bottom-right-radius: #{css-var('border-radius')};
+    }
+
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+  }
+}
