@@ -60,11 +60,12 @@ class DailyStatsFlusher extends AbstractSingleton
             $cache->delete(CacheKeys::notFoundMapToday());
 
             // Retention: keep 7 days
-            $purgeBefore = wp_date('Y-m-d', strtotime('-7 days'));
+            $sevenDaysAgo = current_datetime()->modify('-7 days');
+            $purgeBefore  = $sevenDaysAgo->format('Y-m-d');
             DailyStats::purgeOlderThan($purgeBefore);
             AlertEngine::getInstance()->purgeAlertsOlderThan($purgeBefore);
 
-            update_option('site_alerts_last_daily_run', time(), false);
+            update_option('site_alerts_last_daily_run', DateTimeUtils::timestamp(), false);
         } finally {
             $cache->delete($lockKey);
         }

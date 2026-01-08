@@ -2,6 +2,8 @@
 
 namespace SiteAlerts\Cron;
 
+use SiteAlerts\Utils\DateTimeUtils;
+
 if (!defined('ABSPATH')) {
     exit;
 }
@@ -70,7 +72,7 @@ class CronTask
         $this->hook       = $hook;
         $this->callback   = $callback;
         $this->recurrence = $recurrence;
-        $this->firstRun   = time();
+        $this->firstRun   = DateTimeUtils::timestamp();
     }
 
     /**
@@ -161,12 +163,12 @@ class CronTask
      */
     public function startNow(): self
     {
-        $this->firstRun = time();
+        $this->firstRun = DateTimeUtils::timestamp();
         return $this;
     }
 
     /**
-     * Set first run to a specific time today.
+     * Set first run to a specific time today (WordPress timezone aware).
      *
      * @param int $hour Hour (0-23).
      * @param int $minute Minute (0-59).
@@ -174,11 +176,15 @@ class CronTask
      */
     public function startTodayAt(int $hour, int $minute = 0): self
     {
-        $this->firstRun = strtotime("today {$hour}:{$minute}");
+        $timezone    = DateTimeUtils::getTimezone();
+        $now         = current_datetime();
+        $todayTarget = $now->setTime($hour, $minute, 0);
 
-        if ($this->firstRun < time()) {
-            $this->firstRun = strtotime("tomorrow {$hour}:{$minute}");
+        if ($todayTarget->getTimestamp() < $now->getTimestamp()) {
+            $todayTarget = $todayTarget->modify('+1 day');
         }
+
+        $this->firstRun = $todayTarget->getTimestamp();
 
         return $this;
     }

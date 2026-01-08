@@ -4,6 +4,7 @@ namespace SiteAlerts\Services\Admin\Alerts;
 
 use SiteAlerts\DataProviders\AlertsDataProvider;
 use SiteAlerts\DataProviders\StatsDataProvider;
+use SiteAlerts\Utils\DateTimeUtils;
 use SiteAlerts\Utils\PluginStatus;
 
 if (!defined('ABSPATH')) {
@@ -570,7 +571,7 @@ class AlertsPageContext
                 return sprintf(
                 /* translators: %s: time ago (e.g., "2 minutes") */
                     __('Last checked: %s ago · Range: last 7 days', 'site-alerts'),
-                    human_time_diff(PluginStatus::getLastRunTimestamp(), time())
+                    human_time_diff(PluginStatus::getLastRunTimestamp(), DateTimeUtils::timestamp())
                 );
         }
     }

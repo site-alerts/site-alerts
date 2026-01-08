@@ -3,6 +3,7 @@
 namespace SiteAlerts\Utils;
 
 use SiteAlerts\Models\DailyStats;
+use SiteAlerts\Utils\DateTimeUtils;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -63,7 +64,7 @@ class PluginStatus
         // Check for issue (stale monitoring)
         $lastRun = self::getLastRunTimestamp();
         if ($lastRun !== null) {
-            $hoursSinceLastRun = (time() - $lastRun) / 3600;
+            $hoursSinceLastRun = (DateTimeUtils::timestamp() - $lastRun) / 3600;
             if ($hoursSinceLastRun > self::ISSUE_THRESHOLD_HOURS) {
                 return self::STATUS_ISSUE;
             }
