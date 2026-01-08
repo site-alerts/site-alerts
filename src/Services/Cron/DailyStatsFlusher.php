@@ -41,23 +41,26 @@ class DailyStatsFlusher extends AbstractSingleton
         $cache->set($lockKey, 1, MINUTE_IN_SECONDS * 5);
 
         try {
-            $today = DateTimeUtils::today();
+            // Flush YESTERDAY's data (the completed day when cron runs at midnight)
+            $yesterday    = current_datetime()->modify('-1 day');
+            $yesterdayYmd = $yesterday->format('Y-m-d');
+            $yesterdayKey = $yesterday->format('Ymd');
 
-            DailyStats::ensureDayExists($today);
+            DailyStats::ensureDayExists($yesterdayYmd);
 
-            $pageviews = (int)$cache->get(CacheKeys::pageviewsToday(), 0);
-            $errors404 = (int)$cache->get(CacheKeys::notFoundTotalToday(), 0);
-            $topMapRaw = $cache->get(CacheKeys::notFoundMapToday());
+            $pageviews = (int)$cache->get(CacheKeys::pageviewsForDate($yesterdayKey), 0);
+            $errors404 = (int)$cache->get(CacheKeys::notFoundTotalForDate($yesterdayKey), 0);
+            $topMapRaw = $cache->get(CacheKeys::notFoundMapForDate($yesterdayKey));
 
             $topJson = $this->buildTop404Json($topMapRaw);
 
-            DailyStats::updateDay($today, $pageviews, $errors404, $topJson);
-            AlertEngine::getInstance()->generateForDay($today);
+            DailyStats::updateDay($yesterdayYmd, $pageviews, $errors404, $topJson);
+            AlertEngine::getInstance()->generateForDay($yesterdayYmd);
 
-            // Reset counters
-            $cache->delete(CacheKeys::pageviewsToday());
-            $cache->delete(CacheKeys::notFoundTotalToday());
-            $cache->delete(CacheKeys::notFoundMapToday());
+            // Delete yesterday's cache keys
+            $cache->delete(CacheKeys::pageviewsForDate($yesterdayKey));
+            $cache->delete(CacheKeys::notFoundTotalForDate($yesterdayKey));
+            $cache->delete(CacheKeys::notFoundMapForDate($yesterdayKey));
 
             // Retention: keep 7 days
             $sevenDaysAgo = current_datetime()->modify('-7 days');

@@ -48,6 +48,39 @@ class CacheKeys
     }
 
     /**
+     * Get the cache key for pageview count for a specific date.
+     *
+     * @param string $dateKey Date key in Ymd format (e.g., '20250107').
+     * @return string
+     */
+    public static function pageviewsForDate(string $dateKey): string
+    {
+        return 'pv_' . $dateKey;
+    }
+
+    /**
+     * Get the cache key for 404 count for a specific date.
+     *
+     * @param string $dateKey Date key in Ymd format (e.g., '20250107').
+     * @return string
+     */
+    public static function notFoundTotalForDate(string $dateKey): string
+    {
+        return '404_total_' . $dateKey;
+    }
+
+    /**
+     * Get the cache key for 404 path map for a specific date.
+     *
+     * @param string $dateKey Date key in Ymd format (e.g., '20250107').
+     * @return string
+     */
+    public static function notFoundMapForDate(string $dateKey): string
+    {
+        return '404_map_' . $dateKey;
+    }
+
+    /**
      * Get the cache key for the daily cron lock.
      *
      * @return string
