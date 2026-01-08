@@ -69,7 +69,7 @@ use SiteAlerts\Utils\TemplateUtils;
 
 <div class="sa-page-content">
     <!-- Weekly Digest Section -->
-    <div class="sa-section sa-mb-4">
+    <div class="sa-section">
         <h3 class="sa-section__title"><?php esc_html_e('Weekly Digest', 'site-alerts'); ?></h3>
         <p class="sa-section__description"><?php esc_html_e('Alert summary for the last 7 days.', 'site-alerts'); ?></p>
         <div class="sa-row sa-gy-4">
@@ -92,7 +92,7 @@ use SiteAlerts\Utils\TemplateUtils;
     </div>
 
     <!-- Latest Alerts Section -->
-    <div class="sa-section sa-mb-4">
+    <div class="sa-section">
         <h3 class="sa-section__title"><?php esc_html_e('Latest Alerts', 'site-alerts'); ?></h3>
         <p class="sa-section__description"><?php esc_html_e('Most recent alerts triggered on your site.', 'site-alerts'); ?></p>
 
@@ -131,7 +131,7 @@ use SiteAlerts\Utils\TemplateUtils;
     </div>
 
     <!-- 7-Day History Section -->
-    <div class="sa-section sa-mb-4">
+    <div class="sa-section">
         <h3 class="sa-section__title"><?php esc_html_e('7-Day History', 'site-alerts'); ?></h3>
         <p class="sa-section__description"><?php esc_html_e('Daily traffic and error statistics.', 'site-alerts'); ?></p>
 
@@ -157,24 +157,20 @@ use SiteAlerts\Utils\TemplateUtils;
                 </p>
             <?php endif; ?>
 
-            <div class="sa-row">
-                <div class="sa-col-12">
-                    <?php
-                    // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- Output escaped in template
-                    echo TemplateUtils::renderTemplate('admin/components/table', [
-                        'columns'      => [
-                            ['key' => 'stats_date', 'label' => __('Date', 'site-alerts'), 'type' => 'date'],
-                            ['key' => 'pageviews', 'label' => __('Pageviews', 'site-alerts'), 'type' => 'number'],
-                            ['key' => 'errors_404', 'label' => __('404 Errors', 'site-alerts'), 'type' => 'number'],
-                        ],
-                        'rows'         => $history['rows'],
-                        'tableClass'   => 'sa-table--striped',
-                        'emptyMessage' => $history['emptyMessage'],
-                    ]);
-                    // phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
-                    ?>
-                </div>
-            </div>
+            <?php
+            // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- Output escaped in template
+            echo TemplateUtils::renderTemplate('admin/components/table', [
+                'columns'      => [
+                    ['key' => 'stats_date', 'label' => __('Date', 'site-alerts'), 'type' => 'date'],
+                    ['key' => 'pageviews', 'label' => __('Pageviews', 'site-alerts'), 'type' => 'number'],
+                    ['key' => 'errors_404', 'label' => __('404 Errors', 'site-alerts'), 'type' => 'number'],
+                ],
+                'rows'         => $history['rows'],
+                'tableClass'   => 'sa-table--striped',
+                'emptyMessage' => $history['emptyMessage'],
+            ]);
+            // phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
+            ?>
         <?php else : ?>
             <?php
             // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- Output escaped in template
@@ -193,29 +189,25 @@ use SiteAlerts\Utils\TemplateUtils;
     <!-- Pro Box Section (conditionally shown) -->
     <?php if ($showPromoBanner) : ?>
         <div class="sa-section">
-            <div class="sa-row">
-                <div class="sa-col-12">
-                    <?php
-                    // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- Output escaped in template
-                    echo TemplateUtils::renderTemplate('admin/components/promo-card', [
-                        'badge'       => __('Pro', 'site-alerts'),
-                        'title'       => __('Never miss a critical issue', 'site-alerts'),
-                        'description' => __('Site Alerts Pro is coming with advanced monitoring and notification features.', 'site-alerts'),
-                        'features'    => [
-                            __('Performance slowdown alerting', 'site-alerts'),
-                            __('Email & Slack notifications', 'site-alerts'),
-                            __('Custom alert rules & thresholds', 'site-alerts'),
-                            __('Security alerts for suspicious logins and critical changes', 'site-alerts'),
-                        ],
-                        'note'        => __('More advanced features are planned for future versions.', 'site-alerts'),
-                        'buttonText'  => __('See what’s coming in Site Alerts Pro', 'site-alerts'),
-                        'buttonUrl'   => '#',
-                        'dismissible' => true,
-                    ]);
-                    // phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
-                    ?>
-                </div>
-            </div>
+            <?php
+            // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- Output escaped in template
+            echo TemplateUtils::renderTemplate('admin/components/promo-card', [
+                'badge'       => __('Pro', 'site-alerts'),
+                'title'       => __('Never miss a critical issue', 'site-alerts'),
+                'description' => __('Site Alerts Pro is coming with advanced monitoring and notification features.', 'site-alerts'),
+                'features'    => [
+                    __('Performance slowdown alerting', 'site-alerts'),
+                    __('Email & Slack notifications', 'site-alerts'),
+                    __('Custom alert rules & thresholds', 'site-alerts'),
+                    __('Security alerts for suspicious logins and critical changes', 'site-alerts'),
+                ],
+                'note'        => __('More advanced features are planned for future versions.', 'site-alerts'),
+                'buttonText'  => __('See what’s coming in Site Alerts Pro', 'site-alerts'),
+                'buttonUrl'   => '#',
+                'dismissible' => true,
+            ]);
+            // phpcs:enable WordPress.Security.EscapeOutput.OutputNotEscaped
+            ?>
         </div>
     <?php endif; ?>
 </div>
