@@ -3,6 +3,7 @@
 namespace SiteAlerts\Admin;
 
 use SiteAlerts\Components\AjaxComponent;
+use SiteAlerts\Utils\DateTimeUtils;
 use SiteAlerts\Utils\OptionUtils;
 
 if (!defined('ABSPATH')) {
@@ -75,7 +76,7 @@ class PromoBanner
 
         // Calculate dismissal end timestamp
         $dismissDays  = self::getDismissDuration();
-        $dismissUntil = time() + ($dismissDays * DAY_IN_SECONDS);
+        $dismissUntil = DateTimeUtils::timestamp() + ($dismissDays * DAY_IN_SECONDS);
 
         // Store per-user dismissal
         OptionUtils::setUserOption(self::OPTION_KEY, $dismissUntil);
@@ -101,7 +102,7 @@ class PromoBanner
         }
 
         // Check if dismissal period has expired
-        return time() > (int)$dismissedUntil;
+        return DateTimeUtils::timestamp() > (int)$dismissedUntil;
     }
 
     /**

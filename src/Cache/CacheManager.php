@@ -3,6 +3,7 @@
 namespace SiteAlerts\Cache;
 
 use SiteAlerts\Abstracts\AbstractSingleton;
+use SiteAlerts\Utils\DateTimeUtils;
 use SiteAlerts\Utils\Logger;
 
 if (!defined('ABSPATH')) {
@@ -414,7 +415,7 @@ class CacheManager extends AbstractSingleton
     {
         global $wpdb;
 
-        $time = time();
+        $time = DateTimeUtils::timestamp();
 
         // Get expired transients
         // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Optimizing transients requires direct query

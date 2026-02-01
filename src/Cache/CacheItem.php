@@ -2,6 +2,8 @@
 
 namespace SiteAlerts\Cache;
 
+use SiteAlerts\Utils\DateTimeUtils;
+
 if (!defined('ABSPATH')) {
     exit;
 }
@@ -134,7 +136,7 @@ class CacheItem
      */
     public function expiresAfter(int $seconds): self
     {
-        $this->expiration = time() + $seconds;
+        $this->expiration = DateTimeUtils::timestamp() + $seconds;
         return $this;
     }
 
@@ -171,7 +173,7 @@ class CacheItem
             return null;
         }
 
-        $ttl = $this->expiration - time();
+        $ttl = $this->expiration - DateTimeUtils::timestamp();
         return $ttl > 0 ? $ttl : 0;
     }
 
@@ -186,7 +188,7 @@ class CacheItem
             return false;
         }
 
-        return time() > $this->expiration;
+        return DateTimeUtils::timestamp() > $this->expiration;
     }
 
     /**
