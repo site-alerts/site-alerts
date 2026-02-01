@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Site Alerts\n"
-"POT-Creation-Date: 2026-01-06 14:04+0330\n"
+"POT-Creation-Date: 2026-02-01 03:57+0330\n"
 "PO-Revision-Date: 2026-01-06 14:02+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -21,11 +21,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: src/Abstracts/AbstractSingleton.php:36 src/Core.php:91
+#: src/Abstracts/AbstractSingleton.php:38 src/Core.php:91
 msgid "Cloning is not allowed."
 msgstr ""
 
-#: src/Abstracts/AbstractSingleton.php:44 src/Core.php:101
+#: src/Abstracts/AbstractSingleton.php:46 src/Core.php:101
 msgid "Instances of this class cannot be unserialized."
 msgstr ""
 
@@ -37,11 +37,11 @@ msgstr ""
 msgid "Notice dismissed."
 msgstr ""
 
-#: src/Admin/PromoBanner.php:72
+#: src/Admin/PromoBanner.php:73
 msgid "Unauthorized."
 msgstr ""
 
-#: src/Admin/PromoBanner.php:86
+#: src/Admin/PromoBanner.php:87
 msgid "Banner dismissed successfully."
 msgstr ""
 
@@ -53,11 +53,11 @@ msgstr ""
 msgid "Invalid theme."
 msgstr ""
 
-#: src/Cache/CacheManager.php:460
+#: src/Cache/CacheManager.php:461
 msgid "Clear Plugin Cache"
 msgstr ""
 
-#: src/Cache/CacheManager.php:466
+#: src/Cache/CacheManager.php:467
 msgid "Clear the plugin cache"
 msgstr ""
 
@@ -77,27 +77,27 @@ msgstr ""
 msgid "Site Alerts"
 msgstr ""
 
-#: src/Cron/CronManager.php:97
+#: src/Cron/CronManager.php:96
 msgid "Every Minute"
 msgstr ""
 
-#: src/Cron/CronManager.php:101
+#: src/Cron/CronManager.php:100
 msgid "Every 5 Minutes"
 msgstr ""
 
-#: src/Cron/CronManager.php:105
+#: src/Cron/CronManager.php:104
 msgid "Every 15 Minutes"
 msgstr ""
 
-#: src/Cron/CronManager.php:109
+#: src/Cron/CronManager.php:108
 msgid "Every 30 Minutes"
 msgstr ""
 
-#: src/Cron/CronManager.php:113
+#: src/Cron/CronManager.php:112
 msgid "Once Weekly"
 msgstr ""
 
-#: src/Cron/CronManager.php:117
+#: src/Cron/CronManager.php:116
 msgid "Once Monthly"
 msgstr ""
 
@@ -127,41 +127,41 @@ msgstr ""
 msgid "Unusual activity on your site — with recommended actions."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:123
-#: src/Services/Admin/Alerts/AlertsPageContext.php:331
-#: src/Services/Admin/Alerts/AlertsPageContext.php:497
+#: src/Services/Admin/Alerts/AlertsPageContext.php:124
+#: src/Services/Admin/Alerts/AlertsPageContext.php:332
+#: src/Services/Admin/Alerts/AlertsPageContext.php:498
 msgid "Getting started"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:124
+#: src/Services/Admin/Alerts/AlertsPageContext.php:125
 msgid ""
 "We're collecting baseline data. Your first insights will appear shortly."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:130
-#: src/Services/Admin/Alerts/AlertsPageContext.php:340
+#: src/Services/Admin/Alerts/AlertsPageContext.php:131
+#: src/Services/Admin/Alerts/AlertsPageContext.php:341
 msgid "Limited history"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:131
+#: src/Services/Admin/Alerts/AlertsPageContext.php:132
 msgid ""
 "Insights will improve as more data is collected. Check back soon for more "
 "accurate detection."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:137
+#: src/Services/Admin/Alerts/AlertsPageContext.php:138
 msgid "Check monitoring"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:138
+#: src/Services/Admin/Alerts/AlertsPageContext.php:139
 msgid "Last check was over 24 hours ago. Verify your site cron is running."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:147
+#: src/Services/Admin/Alerts/AlertsPageContext.php:148
 msgid "Critical issues detected"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:151
+#: src/Services/Admin/Alerts/AlertsPageContext.php:152
 #, php-format
 msgid ""
 "%d critical issue detected in the last 7 days that requires immediate "
@@ -172,11 +172,11 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:164
+#: src/Services/Admin/Alerts/AlertsPageContext.php:165
 msgid "Attention needed"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:168
+#: src/Services/Admin/Alerts/AlertsPageContext.php:169
 #, php-format
 msgid "%d alert detected in the last 7 days that may need your attention."
 msgid_plural ""
@@ -184,209 +184,209 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:180
-#: src/Services/Admin/Alerts/AlertsPageContext.php:350
+#: src/Services/Admin/Alerts/AlertsPageContext.php:181
+#: src/Services/Admin/Alerts/AlertsPageContext.php:351
 msgid "All clear"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:181
+#: src/Services/Admin/Alerts/AlertsPageContext.php:182
 msgid ""
 "No unusual activity detected in the last 7 days. We'll keep monitoring and "
 "surface issues with recommended actions."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:216
+#: src/Services/Admin/Alerts/AlertsPageContext.php:217
 msgid "Critical Alerts"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:221
+#: src/Services/Admin/Alerts/AlertsPageContext.php:222
 msgid "Traffic Alerts"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:226
+#: src/Services/Admin/Alerts/AlertsPageContext.php:227
 msgid "404 Alerts"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:231
+#: src/Services/Admin/Alerts/AlertsPageContext.php:232
 msgid "Total Alerts"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:251
-#: src/Services/Admin/Alerts/AlertsPageContext.php:294
+#: src/Services/Admin/Alerts/AlertsPageContext.php:252
+#: src/Services/Admin/Alerts/AlertsPageContext.php:295
 msgid "Last 7 days"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:252
+#: src/Services/Admin/Alerts/AlertsPageContext.php:253
 msgid "Collecting data"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:260
+#: src/Services/Admin/Alerts/AlertsPageContext.php:261
 msgid "Limited data available"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:288
+#: src/Services/Admin/Alerts/AlertsPageContext.php:289
 msgid "No unusual traffic detected"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:290
+#: src/Services/Admin/Alerts/AlertsPageContext.php:291
 msgid "No 404 issues detected"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:292
+#: src/Services/Admin/Alerts/AlertsPageContext.php:293
 msgid "No critical issues detected"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:308
+#: src/Services/Admin/Alerts/AlertsPageContext.php:309
 msgid "Unusual traffic changes detected"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:310
+#: src/Services/Admin/Alerts/AlertsPageContext.php:311
 msgid "Pages returning 404 errors"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:312
+#: src/Services/Admin/Alerts/AlertsPageContext.php:313
 msgid "Issues needing attention"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:314
+#: src/Services/Admin/Alerts/AlertsPageContext.php:315
 msgid "Total in last 7 days"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:332
+#: src/Services/Admin/Alerts/AlertsPageContext.php:333
 msgid ""
 "We're collecting baseline data for your site. Your first insights will "
 "appear shortly."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:333
+#: src/Services/Admin/Alerts/AlertsPageContext.php:334
 msgid "Tip: Leave this plugin active to get accurate insights."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:341
+#: src/Services/Admin/Alerts/AlertsPageContext.php:342
 msgid "Not enough data yet to reliably detect unusual activity."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:342
+#: src/Services/Admin/Alerts/AlertsPageContext.php:343
 msgid "Insights will improve as more data is collected."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:351
+#: src/Services/Admin/Alerts/AlertsPageContext.php:352
 msgid "No unusual activity detected in the last 7 days."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:352
+#: src/Services/Admin/Alerts/AlertsPageContext.php:353
 msgid "We'll keep monitoring and notify you if something changes."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:402
+#: src/Services/Admin/Alerts/AlertsPageContext.php:403
 msgid "Traffic dropped unexpectedly compared to recent days."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:404
+#: src/Services/Admin/Alerts/AlertsPageContext.php:405
 msgid "Traffic increased significantly compared to recent days."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:406
+#: src/Services/Admin/Alerts/AlertsPageContext.php:407
 msgid "Visitors are reaching pages that no longer exist."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:408
+#: src/Services/Admin/Alerts/AlertsPageContext.php:409
 msgid "Unusual activity was detected."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:424
+#: src/Services/Admin/Alerts/AlertsPageContext.php:425
 msgid "Sudden traffic drops are often caused by downtime or recent changes."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:426
+#: src/Services/Admin/Alerts/AlertsPageContext.php:427
 msgid "Check if your site is currently reachable"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:427
+#: src/Services/Admin/Alerts/AlertsPageContext.php:428
 msgid "Review recent plugin or theme changes"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:428
+#: src/Services/Admin/Alerts/AlertsPageContext.php:429
 msgid "Look for increases in 404 errors"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:434
+#: src/Services/Admin/Alerts/AlertsPageContext.php:435
 msgid ""
 "Traffic spikes can indicate viral content, marketing success, or bot "
 "activity."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:436
+#: src/Services/Admin/Alerts/AlertsPageContext.php:437
 msgid "Check your analytics for traffic sources"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:437
+#: src/Services/Admin/Alerts/AlertsPageContext.php:438
 msgid "Review server performance and load times"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:438
+#: src/Services/Admin/Alerts/AlertsPageContext.php:439
 msgid "Look for unusual referrer patterns"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:463
+#: src/Services/Admin/Alerts/AlertsPageContext.php:464
 msgid "Missing pages can frustrate visitors and affect SEO."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:465
+#: src/Services/Admin/Alerts/AlertsPageContext.php:466
 msgid "Add redirects for missing pages"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:466
+#: src/Services/Admin/Alerts/AlertsPageContext.php:467
 msgid "Fix internal links pointing to missing URLs"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:467
+#: src/Services/Admin/Alerts/AlertsPageContext.php:468
 msgid "Review recent permalink changes"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:474
+#: src/Services/Admin/Alerts/AlertsPageContext.php:475
 msgid "This issue may require your attention."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:476
+#: src/Services/Admin/Alerts/AlertsPageContext.php:477
 msgid "Review recent changes to your site"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:477
+#: src/Services/Admin/Alerts/AlertsPageContext.php:478
 msgid "Check your site for any visible issues"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:501
+#: src/Services/Admin/Alerts/AlertsPageContext.php:502
 msgid "We're collecting baseline data. Your first history will appear shortly."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:510
-#: templates/admin/pages/alerts.php:182
+#: src/Services/Admin/Alerts/AlertsPageContext.php:511
+#: templates/admin/pages/alerts.php:178
 msgid "Building history"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:514
+#: src/Services/Admin/Alerts/AlertsPageContext.php:515
 msgid "Building history — check back in a couple days for meaningful trends."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:524
+#: src/Services/Admin/Alerts/AlertsPageContext.php:525
 msgid "No statistics available for the selected period."
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:564
+#: src/Services/Admin/Alerts/AlertsPageContext.php:565
 msgid "Not checked yet · Monitoring starting"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:566
+#: src/Services/Admin/Alerts/AlertsPageContext.php:567
 msgid "Collecting data · Insights will appear soon"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsPageContext.php:568
+#: src/Services/Admin/Alerts/AlertsPageContext.php:569
 msgid "Last checked: over 24 hours ago · Check monitoring status"
 msgstr ""
 
 #. translators: %s: time ago (e.g., "2 minutes")
-#: src/Services/Admin/Alerts/AlertsPageContext.php:572
+#: src/Services/Admin/Alerts/AlertsPageContext.php:573
 #, php-format
 msgid "Last checked: %s ago · Range: last 7 days"
 msgstr ""
@@ -469,7 +469,7 @@ msgid "No data available."
 msgstr ""
 
 #: templates/admin/components/promo-card.php:25
-#: templates/admin/pages/alerts.php:201
+#: templates/admin/pages/alerts.php:195
 msgid "Pro"
 msgstr ""
 
@@ -524,57 +524,57 @@ msgstr ""
 #. translators: 1: average pageviews, 2: average 404 errors
 #: templates/admin/pages/alerts.php:152
 #, php-format
-msgid "Average per day: %1$s pageviews · %2$s 404 errors"
+msgid "Average per day: %1$s pageviews · %2$s page errors (404)"
 msgstr ""
 
-#: templates/admin/pages/alerts.php:166
+#: templates/admin/pages/alerts.php:164
 msgid "Date"
 msgstr ""
 
-#: templates/admin/pages/alerts.php:167
+#: templates/admin/pages/alerts.php:165
 msgid "Pageviews"
 msgstr ""
 
-#: templates/admin/pages/alerts.php:168
+#: templates/admin/pages/alerts.php:166
 msgid "404 Errors"
 msgstr ""
 
-#: templates/admin/pages/alerts.php:202
+#: templates/admin/pages/alerts.php:196
 msgid "Never miss a critical issue"
 msgstr ""
 
-#: templates/admin/pages/alerts.php:203
+#: templates/admin/pages/alerts.php:197
 msgid ""
 "Site Alerts Pro is coming with advanced monitoring and notification features."
 msgstr ""
 
-#: templates/admin/pages/alerts.php:205
+#: templates/admin/pages/alerts.php:199
 msgid "Performance slowdown alerting"
 msgstr ""
 
-#: templates/admin/pages/alerts.php:206
+#: templates/admin/pages/alerts.php:200
 msgid "Email & Slack notifications"
 msgstr ""
 
-#: templates/admin/pages/alerts.php:207
+#: templates/admin/pages/alerts.php:201
 msgid "Custom alert rules & thresholds"
 msgstr ""
 
-#: templates/admin/pages/alerts.php:208
+#: templates/admin/pages/alerts.php:202
 msgid "Security alerts for suspicious logins and critical changes"
 msgstr ""
 
-#: templates/admin/pages/alerts.php:210
+#: templates/admin/pages/alerts.php:204
 msgid "More advanced features are planned for future versions."
 msgstr ""
 
-#: templates/admin/pages/alerts.php:211
+#: templates/admin/pages/alerts.php:205
 msgid "See what’s coming in Site Alerts Pro"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
 #. Author URI of the plugin/theme
-msgid "https://site-alerts.ir/"
+msgid "https://site-alerts.com/"
 msgstr ""
 
 #. Description of the plugin/theme
