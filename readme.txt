@@ -2,11 +2,13 @@
 Contributors: sitealerts
 Tags: alerts, admin notices, notifications, monitoring, admin ui
 Requires at least: 6.1
-Tested up to: 6.4
+Tested up to: 6.9
 Requires PHP: 7.4
 Stable tag: 1.0.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+Get notified when something unusual happens on your WordPress site.
 
 == Description ==
 
