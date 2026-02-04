@@ -30,8 +30,8 @@
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.05em;
-        color: #{css-var('muted-color')};
-        background-color: #{css-var('gray-50')};
+        color: #{css-var('heading-color')};
+        background-color: #{css-var('table-header-bg')};
         border-bottom: 1px solid #{css-var('border-color')};
         white-space: nowrap;
       }
@@ -53,7 +53,7 @@
       }
 
       &:hover {
-        background-color: #{css-var('gray-25')};
+        background-color: #{css-var('table-hover-bg')};
       }
     }
   }
@@ -66,12 +66,8 @@
 
   // Striped variant
   &--striped {
-    > tbody > tr:nth-of-type(odd) {
+    > tbody > tr:nth-child(even):not(:hover) {
       background-color: #{css-var('gray-25')};
-
-      &:hover {
-        background-color: #{css-var('gray-50')};
-      }
     }
   }
 

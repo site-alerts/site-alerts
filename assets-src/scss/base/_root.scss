@@ -110,6 +110,8 @@
   // Table
   #{$css-var-prefix}-table-cell-padding-y: #{$sa-table-cell-padding-y};
   #{$css-var-prefix}-table-cell-padding-x: #{$sa-table-cell-padding-x};
+  #{$css-var-prefix}-table-header-bg: transparent;
+  #{$css-var-prefix}-table-hover-bg: #{$sa-gray-100};
 
   // Form Check Colors (for unchecked state)
   #{$css-var-prefix}-form-check-bg: #{$sa-paper-bg};
@@ -167,6 +169,8 @@
   #{$css-var-prefix}-input-disabled-border: #434968;
 
   // Gray scale adjustments for dark theme
+  #{$css-var-prefix}-gray-25: #3f4356;
+  #{$css-var-prefix}-gray-50: #434968;
   #{$css-var-prefix}-gray-100: #3b3f5c;
   #{$css-var-prefix}-gray-200: #434968;
   #{$css-var-prefix}-gray-300: #4d5274;
@@ -176,4 +180,7 @@
   #{$css-var-prefix}-gray-700: #a9b0d5;
   #{$css-var-prefix}-gray-800: #c1c7e2;
   #{$css-var-prefix}-gray-900: #d9deef;
+
+  // Table - dark theme
+  #{$css-var-prefix}-table-hover-bg: #4d5274;
 }
