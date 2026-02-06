@@ -1,30 +1,32 @@
 # Site Alerts
 
-Site Alerts is a WordPress plugin for managing admin alerts and notices with a clean, extensible architecture.
+Site Alerts is a WordPress plugin that monitors basic site activity and surfaces important changes directly in the WordPress admin dashboard.
+
+It helps site owners become aware of unusual behavior—such as sudden traffic drops, unexpected traffic spikes, or increased 404 errors—using simple, daily insights without external services.
 
 ## Features
 
-- Centralized admin notices management
-- Modular and developer-friendly structure
-- Admin UI assets included in the repository
-- Built to be extended (custom notices, alerts, banners, and future monitoring integrations)
+- Detects sudden drops in daily traffic
+- Highlights unusual traffic spikes
+- Monitors increases in 404 (Not Found) errors
+- Displays clear admin alerts with brief explanations and suggested checks
+- Clean, modular, and extensible codebase
 
 ## Requirements
 
-- WordPress: 6.1+
-- PHP: 7.4+
+- WordPress 6.1 or higher
+- PHP 7.4 or higher
 
 ## Installation
 
-### Option 1: Install from a ZIP (recommended for GitHub users)
+### Install from ZIP
 
 1. Download the repository as a ZIP.
-2. Extract it and upload the `site-alerts` folder to `wp-content/plugins/`.
+2. Extract it and upload the `site-alerts` directory to `wp-content/plugins/`.
 3. Activate **Site Alerts** from **Plugins → Installed Plugins**.
 
-### Option 2: Clone and develop locally
+### Development setup
 
 ```bash
 git clone git@github.com:site-alerts/site-alerts.git
 cd site-alerts
-```

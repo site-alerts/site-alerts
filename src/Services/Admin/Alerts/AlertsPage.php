@@ -40,7 +40,7 @@ class AlertsPage extends AbstractAdminPage
     {
         $context = new AlertsPageContext();
 
-        // Check if promo banner should be shown
+        // Determine whether promo banner should be shown (disabled for initial release)
         $showPromoBanner = PromoBanner::shouldShowBanner();
 
         return [
@@ -51,7 +51,8 @@ class AlertsPage extends AbstractAdminPage
             'digestCards'     => $context->getDigestCards(),
             'latestAlerts'    => $context->getLatestAlerts(),
             'history'         => $context->getHistory(),
-            'showPromoBanner' => $showPromoBanner,
+            // Promo banner intentionally disabled for the initial public release
+            'showPromoBanner' => false,
         ];
     }
 }

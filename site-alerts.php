@@ -2,11 +2,11 @@
 
 /**
  * Plugin Name:         Site Alerts
- * Plugin URI:          https://site-alerts.com/
- * Description:         Get notified when something unusual happens on your WordPress site.
+ * Plugin URI:          https://github.com/site-alerts/site-alerts
+ * Description:         Displays admin dashboard alerts when unusual site activity is detected.
  * Version:             1.0.0
  * Author:              Mohammad Yari
- * Author URI:          https://site-alerts.com/
+ * Author URI:          https://github.com/site-alerts
  * Text Domain:         site-alerts
  * Domain Path:         /languages
  * Requires at least:   6.1
