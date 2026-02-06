@@ -71,8 +71,8 @@ class PageviewSignal
         }
 
         // Exclude static assets and file-like URLs
-        $path = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+        $uri  = isset($_SERVER['REQUEST_URI']) ? (string)esc_url_raw(wp_unslash($_SERVER['REQUEST_URI'])) : '';
+        $path = wp_parse_url($uri, PHP_URL_PATH);
         return !($path && pathinfo($path, PATHINFO_EXTENSION));
-
     }
 }

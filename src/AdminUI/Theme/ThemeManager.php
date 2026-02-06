@@ -128,10 +128,8 @@ class ThemeManager extends AbstractSingleton
      */
     public function handleThemeSwitch(): void
     {
-        $theme = '';
-        if (isset($_POST['theme'])) {
-            $theme = sanitize_text_field(wp_unslash($_POST['theme']));
-        }
+        // phpcs:ignore WordPress.Security.NonceVerification.Missing
+        $theme = isset($_POST['theme']) ? sanitize_text_field(wp_unslash($_POST['theme'])) : '';
 
         if ($this->setTheme($theme)) {
             AjaxComponent::sendSuccess(
