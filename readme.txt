@@ -1,6 +1,6 @@
 === Site Alerts ===
 Contributors: sitealerts
-Tags: alerts, admin notices, notifications, monitoring, admin ui
+Tags: alerts, monitoring, admin notices, site health, traffic
 Requires at least: 6.1
 Tested up to: 6.9
 Requires PHP: 7.4
@@ -8,46 +8,39 @@ Stable tag: 1.0.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Get notified when something unusual happens on your WordPress site.
+Get notified inside your dashboard when something unusual happens on your WordPress site.
 
 == Description ==
 
-Site Alerts helps you get notified when something unusual or important happens on your WordPress site.
-It provides a structured system for managing admin notices, alerts, and promotional banners inside
-the WordPress dashboard with a modern and extensible architecture.
+Site Alerts helps you stay aware of important changes on your WordPress site by displaying clear alerts directly in the admin dashboard.
 
-The plugin is built with a clean, developer-friendly codebase and focuses on performance,
-maintainability, and scalability.
+The plugin monitors basic site activity and highlights unusual behavior such as sudden drops in site activity, unexpected traffic spikes, or increases in 404 (Not Found) errors.
 
-Features include:
-- Centralized admin notices management
-- Custom alert and notice objects
-- Promotional banner support in admin area
-- Modular and extensible architecture
-- Asset management for admin UI
-- Designed for future monitoring and alerting extensions
+These insights help site owners notice potential issues early and take action before they affect visitors.
+
+Key features:
+- Detects sudden drops in daily traffic
+- Highlights unusual traffic spikes
+- Monitors increases in 404 (Not Found) errors
+- Displays admin alerts with brief explanations and suggested checks
+- Clean and performance-focused implementation
 
 == Installation ==
 
 1. Upload the `site-alerts` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the "Plugins" menu in WordPress.
-3. The plugin will start managing admin alerts automatically.
+3. Alerts will appear automatically in the admin dashboard when unusual activity is detected.
 
 == Frequently Asked Questions ==
 
 = Does this plugin require configuration? =
-No initial configuration is required. The plugin is designed to work out of the box and can be extended programmatically.
+No. Site Alerts works out of the box and starts monitoring automatically after activation.
 
-= Is this plugin intended for developers? =
-Yes. Site Alerts is built with a clean architecture and is especially suitable for developers who want to extend or integrate alert systems.
+= Does this plugin use external services or send data elsewhere? =
+No. All monitoring and alerts are handled locally within your WordPress installation.
 
 = Is this plugin free? =
 Yes. Site Alerts is free software released under the GPL license.
-
-== Screenshots ==
-
-1. Admin notice example displayed in the WordPress dashboard
-2. Promotional banner displayed in admin area
 
 == Changelog ==
 

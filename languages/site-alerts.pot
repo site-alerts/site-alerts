@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Site Alerts\n"
-"POT-Creation-Date: 2026-02-01 03:57+0330\n"
+"POT-Creation-Date: 2026-02-07 01:29+0330\n"
 "PO-Revision-Date: 2026-01-06 14:02+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -45,11 +45,11 @@ msgstr ""
 msgid "Banner dismissed successfully."
 msgstr ""
 
-#: src/AdminUI/Theme/ThemeManager.php:139
+#: src/AdminUI/Theme/ThemeManager.php:137
 msgid "Theme switched successfully."
 msgstr ""
 
-#: src/AdminUI/Theme/ThemeManager.php:143
+#: src/AdminUI/Theme/ThemeManager.php:141
 msgid "Invalid theme."
 msgstr ""
 
@@ -71,7 +71,7 @@ msgstr ""
 
 #. Plugin Name of the plugin/theme
 #: src/Config/HeaderConfig.php:59
-#: src/Services/Admin/Alerts/AlertsManager.php:48
+#: src/Services/Admin/Alerts/AlertsManager.php:66
 #: src/Services/Admin/Alerts/AlertsPage.php:47
 #: templates/admin/layouts/header.php:19 templates/admin/pages/alerts.php:26
 msgid "Site Alerts"
@@ -101,25 +101,25 @@ msgstr ""
 msgid "Once Monthly"
 msgstr ""
 
-#: src/DataProviders/AlertsDataProvider.php:171
+#: src/DataProviders/AlertsDataProvider.php:271
 msgid "Traffic Drop"
 msgstr ""
 
-#: src/DataProviders/AlertsDataProvider.php:173
+#: src/DataProviders/AlertsDataProvider.php:273
 msgid "Traffic Spike"
 msgstr ""
 
-#: src/DataProviders/AlertsDataProvider.php:175
+#: src/DataProviders/AlertsDataProvider.php:275
 msgid "404 Spike"
 msgstr ""
 
-#: src/DataProviders/AlertsDataProvider.php:177
+#: src/DataProviders/AlertsDataProvider.php:277
 #: templates/admin/components/alert-card.php:28
 #: templates/admin/pages/alerts.php:119
 msgid "Alert"
 msgstr ""
 
-#: src/Services/Admin/Alerts/AlertsManager.php:56
+#: src/Services/Admin/Alerts/AlertsManager.php:94
 msgid "Alerts"
 msgstr ""
 
@@ -573,14 +573,17 @@ msgid "See what’s coming in Site Alerts Pro"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-#. Author URI of the plugin/theme
-msgid "https://site-alerts.com/"
+msgid "https://github.com/site-alerts/site-alerts"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Get notified when something unusual happens on your WordPress site."
+msgid "Displays admin dashboard alerts when unusual site activity is detected."
 msgstr ""
 
 #. Author of the plugin/theme
 msgid "Mohammad Yari"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://github.com/site-alerts"
 msgstr ""

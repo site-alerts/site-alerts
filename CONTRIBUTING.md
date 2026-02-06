@@ -34,6 +34,8 @@ Please open an issue and clearly describe the use case and expected behavior.
 - Keep changes focused and minimal
 - Avoid introducing breaking changes without discussion
 - Ensure compatibility with supported WordPress and PHP versions
+- **This plugin is intentionally lightweight; please avoid adding heavy analytics, external services, or real-time tracking without prior discussion**
+- **Small, focused pull requests are preferred**
 
 ## License
 
