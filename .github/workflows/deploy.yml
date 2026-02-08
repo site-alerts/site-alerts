@@ -38,3 +38,4 @@ jobs:
                         gulpfile.mjs
                         config
                         phpcs.xml
+                        composer.lock
