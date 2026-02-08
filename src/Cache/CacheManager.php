@@ -84,12 +84,6 @@ class CacheManager extends AbstractSingleton
         // Clear cache on certain events
         add_action('switch_theme', [$this, 'flush']);
         add_action('upgrader_process_complete', [$this, 'flush']);
-
-        // Admin bar cache clear
-        if (is_admin()) {
-            add_action('admin_bar_menu', [$this, 'addAdminBarMenu'], 100);
-            add_action('admin_init', [$this, 'handleCacheClear']);
-        }
     }
 
     /**
@@ -442,57 +436,6 @@ class CacheManager extends AbstractSingleton
         }
 
         return $count;
-    }
-
-    /**
-     * Add cache clear option to admin bar.
-     *
-     * @param \WP_Admin_Bar $adminBar Admin bar instance.
-     * @return void
-     */
-    public function addAdminBarMenu(\WP_Admin_Bar $adminBar): void
-    {
-        if (!current_user_can('manage_options')) {
-            return;
-        }
-
-        $adminBar->add_node([
-            'id'    => 'sa-clear-cache',
-            'title' => __('Clear Plugin Cache', 'site-alerts'),
-            'href'  => wp_nonce_url(
-                admin_url('admin.php?action=sa_clear_cache'),
-                'sa_clear_cache'
-            ),
-            'meta'  => [
-                'title' => __('Clear the plugin cache', 'site-alerts'),
-            ],
-        ]);
-    }
-
-    /**
-     * Handle cache clear request.
-     *
-     * @return void
-     */
-    public function handleCacheClear(): void
-    {
-        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Nonce is verified below
-        if (!isset($_GET['action']) || $_GET['action'] !== 'sa_clear_cache') {
-            return;
-        }
-
-        if (!check_admin_referer('sa_clear_cache')) {
-            return;
-        }
-
-        if (!current_user_can('manage_options')) {
-            return;
-        }
-
-        $this->flush();
-
-        wp_safe_redirect(wp_get_referer() ?: admin_url());
-        exit;
     }
 
     /**
