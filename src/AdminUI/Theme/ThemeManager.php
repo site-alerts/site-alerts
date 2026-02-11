@@ -5,6 +5,7 @@ namespace SiteAlerts\AdminUI\Theme;
 use SiteAlerts\Abstracts\AbstractSingleton;
 use SiteAlerts\Components\AjaxComponent;
 use SiteAlerts\Utils\OptionUtils;
+use SiteAlerts\Config\UserOptions;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -29,11 +30,6 @@ class ThemeManager extends AbstractSingleton
      * Dark admin theme identifier.
      */
     public const THEME_DARK = 'dark';
-
-    /**
-     * User option key for storing the admin theme (without prefix).
-     */
-    private const ADMIN_THEME_KEY = 'admin_theme';
 
     /**
      * Whether hooks and AJAX handlers have already been registered.
@@ -74,7 +70,7 @@ class ThemeManager extends AbstractSingleton
      */
     public function getCurrentTheme(): string
     {
-        $theme = OptionUtils::getUserOption(self::ADMIN_THEME_KEY, self::THEME_LIGHT);
+        $theme = OptionUtils::getUserOption(UserOptions::ADMIN_THEME, self::THEME_LIGHT);
 
         return in_array($theme, [self::THEME_LIGHT, self::THEME_DARK], true)
             ? $theme
@@ -94,7 +90,7 @@ class ThemeManager extends AbstractSingleton
             return false;
         }
 
-        OptionUtils::setUserOption(self::ADMIN_THEME_KEY, $theme);
+        OptionUtils::setUserOption(UserOptions::ADMIN_THEME, $theme);
         return true;
     }
 

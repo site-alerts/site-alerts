@@ -1,18 +1,4 @@
 <?php
-/**
- * Header Configuration
- *
- * Provides default header elements (brand, navigation, actions) that can be
- * overridden, extended, or disabled on a per-page basis.
- *
- * Usage in admin pages:
- * - Override getHeaderContext() to customize the header
- * - Use HeaderConfig::getDefaults() as a base
- * - Merge, extend, or replace specific sections
- *
- * @package SiteAlerts\Config
- * @version 1.0.0
- */
 
 namespace SiteAlerts\Config;
 
@@ -26,6 +12,17 @@ if (!defined('ABSPATH')) {
  * Class HeaderConfig
  *
  * Centralized configuration for admin header defaults.
+ *
+ * Provides default header elements (brand, navigation, actions) that can be
+ * overridden, extended, or disabled on a per-page basis.
+ *
+ * Usage in admin pages:
+ * - Override getHeaderContext() to customize the header
+ * - Use HeaderConfig::getDefaults() as a base
+ * - Merge, extend, or replace specific sections
+ *
+ * @package SiteAlerts\Config
+ * @version 1.0.0
  */
 final class HeaderConfig
 {

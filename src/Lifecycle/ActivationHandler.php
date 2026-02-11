@@ -6,6 +6,7 @@ use SiteAlerts\Cache\CacheManager;
 use SiteAlerts\Database\Schemas\CoreTables;
 use SiteAlerts\Utils\CacheKeys;
 use SiteAlerts\Utils\OptionUtils;
+use SiteAlerts\Config\PluginMeta;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -139,7 +140,7 @@ class ActivationHandler
      */
     public static function runUpgrades(): void
     {
-        $currentVersion = get_option('sa_version', '0.0.0');
+        $currentVersion = OptionUtils::getMeta(PluginMeta::VERSION, '0.0.0');
         $newVersion     = SA_VERSION;
 
         if (version_compare($currentVersion, $newVersion, '<')) {
@@ -181,7 +182,7 @@ class ActivationHandler
      */
     public static function setVersion(): void
     {
-        update_option('sa_version', SA_VERSION);
+        OptionUtils::setMeta(PluginMeta::VERSION, SA_VERSION);
     }
 
     /**

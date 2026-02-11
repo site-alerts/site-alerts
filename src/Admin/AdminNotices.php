@@ -6,6 +6,7 @@ use SiteAlerts\Cache\CacheManager;
 use SiteAlerts\Components\AjaxComponent;
 use SiteAlerts\Utils\CacheKeys;
 use SiteAlerts\Utils\OptionUtils;
+use SiteAlerts\Config\UserOptions;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -22,11 +23,6 @@ if (!defined('ABSPATH')) {
  */
 class AdminNotices
 {
-    /**
-     * Option key for dismissed notices (without prefix)
-     */
-    private const DISMISSED_NOTICES_KEY = 'dismissed_notices';
-
     /**
      * In-memory notice storage
      *
@@ -206,7 +202,7 @@ class AdminNotices
      */
     public static function isDismissed(string $id): bool
     {
-        $dismissed = OptionUtils::getUserOption(self::DISMISSED_NOTICES_KEY, []);
+        $dismissed = OptionUtils::getUserOption(UserOptions::DISMISSED_NOTICES, []);
 
         if (!is_array($dismissed)) {
             return false;
@@ -223,7 +219,7 @@ class AdminNotices
      */
     public static function markDismissed(string $id): void
     {
-        $dismissed = OptionUtils::getUserOption(self::DISMISSED_NOTICES_KEY, []);
+        $dismissed = OptionUtils::getUserOption(UserOptions::DISMISSED_NOTICES, []);
 
         if (!is_array($dismissed)) {
             $dismissed = [];
@@ -231,7 +227,7 @@ class AdminNotices
 
         if (!in_array($id, $dismissed, true)) {
             $dismissed[] = $id;
-            OptionUtils::setUserOption(self::DISMISSED_NOTICES_KEY, $dismissed);
+            OptionUtils::setUserOption(UserOptions::DISMISSED_NOTICES, $dismissed);
         }
     }
 
@@ -242,7 +238,7 @@ class AdminNotices
      */
     public static function resetDismissed(): void
     {
-        OptionUtils::deleteUserOption(self::DISMISSED_NOTICES_KEY);
+        OptionUtils::deleteUserOption(UserOptions::DISMISSED_NOTICES);
     }
 
     /**

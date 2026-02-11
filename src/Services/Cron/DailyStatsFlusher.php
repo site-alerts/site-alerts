@@ -4,10 +4,12 @@ namespace SiteAlerts\Services\Cron;
 
 use SiteAlerts\Abstracts\AbstractSingleton;
 use SiteAlerts\Cache\CacheManager;
+use SiteAlerts\Config\PluginMeta;
 use SiteAlerts\Models\DailyStats;
 use SiteAlerts\Services\Insights\AlertEngine;
 use SiteAlerts\Utils\DateTimeUtils;
 use SiteAlerts\Utils\CacheKeys;
+use SiteAlerts\Utils\OptionUtils;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -70,7 +72,7 @@ class DailyStatsFlusher extends AbstractSingleton
             DailyStats::purgeOlderThan($purgeBefore);
             AlertEngine::getInstance()->purgeAlertsOlderThan($purgeBefore);
 
-            update_option('site_alerts_last_daily_run', DateTimeUtils::timestamp(), false);
+            OptionUtils::setMeta(PluginMeta::LAST_DAILY_RUN, DateTimeUtils::timestamp(), false);
         } finally {
             $cache->delete($lockKey);
         }

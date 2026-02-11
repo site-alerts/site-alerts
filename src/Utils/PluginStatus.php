@@ -3,7 +3,9 @@
 namespace SiteAlerts\Utils;
 
 use SiteAlerts\Models\DailyStats;
+use SiteAlerts\Config\PluginMeta;
 use SiteAlerts\Utils\DateTimeUtils;
+use SiteAlerts\Utils\OptionUtils;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -105,7 +107,8 @@ class PluginStatus
      */
     public static function getLastRunTimestamp(): ?int
     {
-        $timestamp = get_option(self::OPTION_LAST_DAILY_RUN, null);
+
+        $timestamp = OptionUtils::getMeta(PluginMeta::LAST_DAILY_RUN, null);
 
         if ($timestamp === null || $timestamp === false || $timestamp === '') {
             return null;

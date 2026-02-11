@@ -80,14 +80,13 @@ class UninstallHandler
 
         // Delete main plugin option
         delete_option('site_alerts');
-        delete_option('sa_version');
 
         // Delete any options with our prefix
         // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Bulk cleanup on uninstall requires direct query
         $wpdb->query(
             $wpdb->prepare(
                 "DELETE FROM {$wpdb->options} WHERE option_name LIKE %s",
-                'sa_%'
+                'site_alerts_%'
             )
         );
     }

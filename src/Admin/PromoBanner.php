@@ -5,6 +5,7 @@ namespace SiteAlerts\Admin;
 use SiteAlerts\Components\AjaxComponent;
 use SiteAlerts\Utils\DateTimeUtils;
 use SiteAlerts\Utils\OptionUtils;
+use SiteAlerts\Config\UserOptions;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -27,13 +28,6 @@ class PromoBanner
      * @var int
      */
     private const DISMISS_DURATION_DAYS = 14;
-
-    /**
-     * Option key for storing dismissal timestamp
-     *
-     * @var string
-     */
-    private const OPTION_KEY = 'promo_banner_dismissed_until';
 
     /**
      * Whether the class has been initialized
@@ -79,7 +73,7 @@ class PromoBanner
         $dismissUntil = DateTimeUtils::timestamp() + ($dismissDays * DAY_IN_SECONDS);
 
         // Store per-user dismissal
-        OptionUtils::setUserOption(self::OPTION_KEY, $dismissUntil);
+        OptionUtils::setUserOption(UserOptions::PROMO_BANNER_DISMISSED_UNTIL, $dismissUntil);
 
         AjaxComponent::sendSuccess([
             'dismissed_until' => $dismissUntil,
@@ -94,7 +88,7 @@ class PromoBanner
      */
     public static function shouldShowBanner(): bool
     {
-        $dismissedUntil = OptionUtils::getUserOption(self::OPTION_KEY, 0);
+        $dismissedUntil = OptionUtils::getUserOption(UserOptions::PROMO_BANNER_DISMISSED_UNTIL, 0);
 
         // Never dismissed
         if (empty($dismissedUntil)) {

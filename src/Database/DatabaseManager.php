@@ -3,6 +3,8 @@
 namespace SiteAlerts\Database;
 
 use SiteAlerts\Utils\Logger;
+use SiteAlerts\Utils\OptionUtils;
+use SiteAlerts\Config\PluginMeta;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -18,11 +20,6 @@ if (!defined('ABSPATH')) {
  */
 class DatabaseManager
 {
-    /**
-     * Option name for storing database version
-     */
-    public const VERSION_OPTION = 'sa_db_version';
-
     /**
      * Current database schema version
      *
@@ -110,7 +107,7 @@ class DatabaseManager
      */
     public static function getInstalledVersion(): string
     {
-        return get_option(self::VERSION_OPTION, '0.0.0');
+        return OptionUtils::getMeta(PluginMeta::DB_VERSION, '0.0.0');
     }
 
     /**
@@ -150,7 +147,7 @@ class DatabaseManager
         }
 
         // Update version after successful creation
-        update_option(self::VERSION_OPTION, self::$version);
+        OptionUtils::setMeta(PluginMeta::DB_VERSION, self::$version);
 
         /**
          * Action fired after database tables are created/updated.
@@ -228,7 +225,7 @@ class DatabaseManager
             self::dropTable($schema->getName());
         }
 
-        delete_option(self::VERSION_OPTION);
+        OptionUtils::deleteMeta(PluginMeta::DB_VERSION);
     }
 
     /**

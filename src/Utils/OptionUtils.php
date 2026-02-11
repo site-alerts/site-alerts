@@ -21,14 +21,14 @@ class OptionUtils
      *
      * @var string
      */
-    protected static string $optionName = 'site_alerts';
+    protected const OPTION_NAME = 'site_alerts';
 
     /**
      * Prefix for individual option keys
      *
      * @var string
      */
-    protected static string $prefix = 'sa_';
+    protected const META_PREFIX = 'site_alerts_';
 
     /**
      * Get full option key with prefix
@@ -36,9 +36,9 @@ class OptionUtils
      * @param string $key
      * @return string
      */
-    public static function getOptionName(string $key): string
+    public static function getMetaOptionName(string $key): string
     {
-        return self::$prefix . $key;
+        return self::META_PREFIX . $key;
     }
 
     /**
@@ -60,7 +60,7 @@ class OptionUtils
      */
     public static function getAllOptions(): array
     {
-        $options = get_option(self::$optionName, []);
+        $options = get_option(self::OPTION_NAME, self::getDefaults());
         return array_merge(self::getDefaults(), is_array($options) ? $options : []);
     }
 
@@ -85,9 +85,9 @@ class OptionUtils
      */
     public static function setOption(string $key, $value): void
     {
-        $options       = get_option(self::$optionName, []);
+        $options       = get_option(self::OPTION_NAME, self::getDefaults());
         $options[$key] = $value;
-        update_option(self::$optionName, $options);
+        update_option(self::OPTION_NAME, $options);
     }
 
     /**
@@ -97,10 +97,10 @@ class OptionUtils
      */
     public static function deleteOption(string $key): void
     {
-        $options = get_option(self::$optionName, []);
+        $options = get_option(self::OPTION_NAME, []);
         if (isset($options[$key])) {
             unset($options[$key]);
-            update_option(self::$optionName, $options);
+            update_option(self::OPTION_NAME, $options);
         }
     }
 
@@ -109,7 +109,7 @@ class OptionUtils
      */
     public static function resetOptions(): void
     {
-        update_option(self::$optionName, self::getDefaults());
+        update_option(self::OPTION_NAME, self::getDefaults());
     }
 
     /**
@@ -126,7 +126,7 @@ class OptionUtils
             return $default;
         }
 
-        $options = get_user_meta($userId, self::$optionName, true) ?: [];
+        $options = get_user_meta($userId, self::OPTION_NAME, true) ?: [];
         return $options[$key] ?? $default;
     }
 
@@ -143,9 +143,9 @@ class OptionUtils
             return;
         }
 
-        $options       = get_user_meta($userId, self::$optionName, true) ?: [];
+        $options       = get_user_meta($userId, self::OPTION_NAME, true) ?: [];
         $options[$key] = $value;
-        update_user_meta($userId, self::$optionName, $options);
+        update_user_meta($userId, self::OPTION_NAME, $options);
     }
 
     /**
@@ -160,10 +160,10 @@ class OptionUtils
             return;
         }
 
-        $options = get_user_meta($userId, self::$optionName, true) ?: [];
+        $options = get_user_meta($userId, self::OPTION_NAME, true) ?: [];
         if (isset($options[$key])) {
             unset($options[$key]);
-            update_user_meta($userId, self::$optionName, $options);
+            update_user_meta($userId, self::OPTION_NAME, $options);
         }
     }
 
@@ -177,6 +177,40 @@ class OptionUtils
             return;
         }
 
-        update_user_meta($userId, self::$optionName, []);
+        update_user_meta($userId, self::OPTION_NAME, []);
+    }
+
+    /**
+     * Get plugin meta option (standalone option)
+     *
+     * @param string $key
+     * @param mixed $default
+     * @return mixed
+     */
+    public static function getMeta(string $key, $default = null)
+    {
+        return get_option(self::getMetaOptionName($key), $default);
+    }
+
+    /**
+     * Set plugin meta option (standalone option)
+     *
+     * @param string $key
+     * @param mixed $value
+     * @param bool|null $autoload
+     */
+    public static function setMeta(string $key, $value, ?bool $autoload = null): void
+    {
+        update_option(self::getMetaOptionName($key), $value, $autoload);
+    }
+
+    /**
+     * Delete plugin meta option
+     *
+     * @param string $key
+     */
+    public static function deleteMeta(string $key): void
+    {
+        delete_option(self::getMetaOptionName($key));
     }
 }
