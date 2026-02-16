@@ -30,7 +30,7 @@ class CacheItem
     /**
      * Cached value.
      */
-    private mixed $value = null;
+    private $value = null;
 
     /**
      * Whether this item was retrieved from cache.
