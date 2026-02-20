@@ -8,7 +8,7 @@ If you discover a security vulnerability, please report it responsibly and **do 
 
 To report a security issue, please contact us via email:
 
-📧 site.alerts.wp@gmail.com
+📧 proactive.site.advisor@gmail.com
 
 Please include as much information as possible:
 

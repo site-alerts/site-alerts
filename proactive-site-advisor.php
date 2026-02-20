@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:         Proactive Site Advisor - Insights & Actionable Recommendations
+ * Plugin Name:         Proactive Site Advisor
  * Plugin URI:          https://github.com/proactive-site-advisor/proactive-site-advisor
  * Description:         Provides proactive insights and actionable recommendations for WordPress sites, alerting you to potential issues before they impact your site.
  * Version:             1.0.0
